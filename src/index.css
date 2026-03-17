@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import "tailwindcss";
+
+
+
+@theme{
+  /* Font Family */
+  --font-dm-sans: 'DM Sans', sans-serif;
+  --font-syne: 'Syne', sans-serif;
+/* Colors */
+  --color-heading: #080808;
+  --color-body: #080808/.80;
+  --color-subdued: #080808/.60;
+  --color-hints: #080808/.40;
+  --color-brand: #FFB646;
+  --color-brand2: #FF9330;
+  --color-white: #fff;
+  --color-black: #000;
+
+  
+
+  /* Breakpoint */
+  --breakpoint-*: initial;
+  --breakpoint-xs: 30rem;
+  --breakpoint-sm: 40rem;
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+  --breakpoint-xl: 82rem;
+}
