@@ -1,12 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Syne:wght@400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oswald:wght@200..700&family=Syne:wght@400..800&display=swap');
 @import "tailwindcss";
 
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 1rem;
+}
 
 
 @theme{
   /* Font Family */
   --font-dm-sans: 'DM Sans', sans-serif;
   --font-syne: 'Syne', sans-serif;
+  --font-oswald: 'Oswald', sans-serif;
 /* Colors */
   --color-heading: #080808;
   --color-body: #080808/.80;
@@ -16,6 +22,7 @@
   --color-brand2: #FF9330;
   --color-white: #fff;
   --color-black: #000;
+  --color-orange: #FFE9D9;
 
   
 
@@ -25,5 +32,5 @@
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
-  --breakpoint-xl: 82rem;
+  --breakpoint-xl: 81rem;
 }
