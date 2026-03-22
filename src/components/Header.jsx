@@ -3,11 +3,11 @@ import React from "react";
 
 const Header = () => {
   return (
-    <nav className="flex justify-between items-center bg-orange h-20 relative">
-      <div className="font-oswald py-6 text-[24px] font-semibold text-heading px-12">
-        <span className="text-red-500">R</span>i
-        <span className="text-red-500">Y</span>a
-        <span className="text-red-500">D</span>
+    <nav className="flex justify-between items-center bg-[#FFE9D9] h-20 relative">
+      <div className="font-oswald py-6 text-[24px] font-semibold text-brand px-12 after:absolute after:w-full after:h-px after:bg-[#C0C0C0] after:-bottom-px after:left-12 after:z-10 ">
+        <span className="text-heading">R</span>i
+        <span className="text-heading">Y</span>a
+        <span className="text-heading">D</span>
       </div>
       <div className="h-full " >
         <div className="flex items-center gap-5 h-full">
