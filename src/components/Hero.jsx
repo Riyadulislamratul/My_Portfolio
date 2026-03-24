@@ -23,8 +23,8 @@ const Hero = () => {
               Frontend Developer | React • JavaScript • Next.js
             </h3>
             <div className="mb-32.5 cursor-pointer flex items-center gap-7.5">
-              <BlackButton>Contact Me</BlackButton>
-              <TransparentButton>Download CV</TransparentButton>
+              <BlackButton>Let's Talk</BlackButton>
+              <TransparentButton>My Work</TransparentButton>
             </div>
             <div className="flex items-center gap-8 pb-31.5">
               <div className="flex items-center gap-2 ">
@@ -34,7 +34,7 @@ const Hero = () => {
               <div>
                 |
               </div>
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-5 cursor-pointer">
                 <img src={Behance} alt="Behance" className="w-6 h-6" />
                 <img src={Dribbble} alt="Dribbble" className="w-6 h-6" />
                 <img src={LinkedIn} alt="LinkedIn" className="w-6 h-6" />

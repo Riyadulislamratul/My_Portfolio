@@ -1,8 +1,14 @@
 import React from 'react'
+import Section from './Section'
+import Container from './Container'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <Section>
+      <Container>
+        
+      </Container>
+    </Section>
   )
 }
 
