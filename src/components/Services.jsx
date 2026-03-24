@@ -20,8 +20,8 @@ const Services = () => {
               </p>
             </div>
           </div>
-          <div className="flex justify-center gap-6 w-full">
-            <div className="grid grid-cols-3 gap-6 w-full">
+          <div className="grid grid-cols-[auto_416px] gap-6">
+            <div className="grid grid-cols-3 gap-6">
             <ServiceCard
             title="Interaction design"
             img={Icon6}
@@ -48,7 +48,7 @@ const Services = () => {
             />
           </div>
           <div>
-            <div className="px-6 py-9 bg-heading rounded-[8px] w-[416px]">
+            <div className="px-6 py-9 bg-heading rounded-2xl">
                 <ArrowUpRightIcon className="text-[#F8B144] w-20 h-20 justify-self-end-safe" />
                 <h4 className="text-brand mt-44">SAY HELLO!</h4>
                 <h3 className="text-white mt-2 font-bold font-syne text-[32px]">hello@henry.com</h3>
@@ -63,7 +63,7 @@ const Services = () => {
 
 export const ServiceCard = ({ title, img }) => {
   return (
-    <div className="rounded-lg bg-[#F5F5F5] w-[270px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white cursor-pointer">
+    <div className="rounded-2xl bg-[#F5F5F5] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:bg-white cursor-pointer">
       <div className="px-6 py-7">
         <div className="bg-white w-12 h-12 rounded-full items-center flex justify-center mb-7 transition-all duration-300 group-hover:bg-black">
           <img src={img} alt={title} className="w-6 h-6" />
