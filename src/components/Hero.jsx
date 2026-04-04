@@ -45,8 +45,7 @@ const Hero = () => {
           </div>
           <div></div>
           <div className="size-45 p-5.25 relative ">
-            <div className="size-34.25 rounded-full border-[6px]  border-brand flex items-center justify-center absolute top-56 right-0">
-              {/* Rotating Text */}
+            <Link to="/contact" className="size-34.25 rounded-full border-[6px] cursor-pointer border-brand flex items-center justify-center absolute top-56 right-0 text-[15px]">
               <div className="absolute w-full h-full animate-spin-slow">
                 <svg viewBox="0 0 200 200" className="w-full h-full">
                   <path
@@ -59,8 +58,8 @@ const Hero = () => {
                   />
                   <text
                     fill="white"
-                    fontSize="12.5"
-                    letterSpacing="13"
+                    fontSize="15.5"
+                    letterSpacing="10"
                     fontFamily="DM Sans"
                     fontWeight="medium"
                   >
@@ -82,7 +81,7 @@ const Hero = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </Container>
@@ -90,17 +89,17 @@ const Hero = () => {
   );
 };
 
-export const BlackButton = ({ children }) => {
+export const BlackButton = ({ children, className }) => {
   return (
-    <button className="bg-black font-bold text-[15px] font-dm-sans leading-4 cursor-pointer text-white px-8 py-4 rounded-[8px] flex items-center gap-2">
+    <button className={`bg-black font-bold text-[15px] font-dm-sans leading-4 cursor-pointer text-white px-8 py-4 rounded-[8px] flex items-center gap-2 ${className}`}>
       {children}
       <ArrowUpRightIcon className="text-white w-6 h-6" />
     </button>
   );
 };
-export const TransparentButton = ({ children }) => {
+export const TransparentButton = ({ children, className }) => {
   return (
-    <button className="bg-transparent text-black px-8 py-4 font-bold text-[15px] font-dm-sans leading-4 cursor-pointer border border-black rounded-[8px] flex items-center gap-2">
+    <button className={`bg-transparent text-black px-8 py-4 font-bold text-[15px] font-dm-sans leading-4 cursor-pointer border border-black rounded-[8px] flex items-center gap-2 ${className}`}>
       {children}
       <ArrowUpRightIcon className="text-heading w-6 h-6" />
     </button>
