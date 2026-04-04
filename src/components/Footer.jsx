@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "./Section";
 import Container from "./Container";
+import { Link } from "react-router";
 import { ArrowUpRightIcon, ArrowUp } from "lucide-react";
 import Behance from "../assets/wh-behance.svg";
 import Dribbble from "../assets/wh-dribble.svg";
@@ -22,10 +23,18 @@ const Footer = () => {
                   Frontend Developer |
                 </p>
                 <div className="flex items-center gap-5">
-                  <img src={Behance} alt="Behance" className="w-6 h-6" />
-                  <img src={Dribbble} alt="Dribbble" className="w-6 h-6" />
-                  <img src={LinkedIn} alt="LinkedIn" className="w-6 h-6" />
-                  <img src={Github} alt="Github" className="w-6 h-6" />
+                  <Link to="https://www.behance.net/" target="_blank" rel="noopener noreferrer">
+                    <img src={Behance} alt="Behance" className="w-6 h-6" />
+                  </Link>
+                  <Link to="https://dribbble.com/" target="_blank" rel="noopener noreferrer">
+                    <img src={Dribbble} alt="Dribbble" className="w-6 h-6" />
+                  </Link>
+                  <Link to="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
+                    <img src={LinkedIn} alt="LinkedIn" className="w-6 h-6" />
+                  </Link>
+                  <Link to="https://github.com/" target="_blank" rel="noopener noreferrer">
+                    <img src={Github} alt="Github" className="w-6 h-6" />
+                  </Link>
                 </div>
               </div>
             </div>
