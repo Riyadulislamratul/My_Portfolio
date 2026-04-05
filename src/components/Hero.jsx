@@ -1,22 +1,20 @@
 import React from "react";
 import Container from "./Container";
+import Section from "./Section";
 import { ArrowDown, ArrowUpRightIcon } from "lucide-react";
 import Behance from "../assets/behance.svg";
 import Dribbble from "../assets/dribble.svg";
 import LinkedIn from "../assets/linkedin.svg";
 import Github from "../assets/github.svg";
 import { Link } from "react-router";
-import Gray from "../assets/gray.jpg";
-import Orange from "../assets/orange.jpg";
-import ImageBg from "../assets/img.png";
-import MyImage from "../assets/img.jpg";
-
+import HeroImg from "../assets/hero-image.png";
+import MyImg from "../assets/my-image.png";
 
 const Hero = () => {
   return (
     <section className="bg-orange pt-15">
       <Container>
-        <div className="flex justify-between items-center gap-40.5">
+        <div className="flex justify-between items-center gap-40.5 relative">
           <div>
             <h3 className="text-[32px] font-syne font-bold text-heading mb-2 leading-10">
               Hello, I’m
@@ -47,17 +45,14 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="relative">
-            <div className="absolute -top-126 -right-181 w-[788px] h-[850px]">
-              <img src={ImageBg} alt="" className="w-full" />
-            </div>
-            {/* <div className="absolute -top-106 -right-143 z-2 w-[488px] h-[350px]">
-              <img src={MyImage} alt="" className="w-full z-10 rounded-full" />
-            </div> */}
+          <div className="w-[662px] h-[985px] rounded-[220px] bg-brand rotate-45 absolute -right-105 -top-94 overflow-hidden">
+            <img src={MyImg} alt="Hero" className=" w-full h-full object-cover rotate-316 pt-48 pr-49" />
           </div>
-          {/* Circle */}
-          <div className="size-45 p-5.25 relative z-10">
-            <Link to="/contact" className="size-34.25 rounded-full border-[6px] cursor-pointer border-brand flex items-center justify-center absolute top-56 -right-16 text-[15px]">
+          <div className="size-45 p-5.25 absolute -right-46 top-118">
+            <Link
+              to="/contact"
+              className="size-34.25 rounded-full border-[6px] cursor-pointer border-brand flex items-center justify-center absolute text-[15px]"
+            >
               <div className="absolute w-full h-full animate-spin-slow">
                 <svg viewBox="0 0 200 200" className="w-full h-full">
                   <path
@@ -103,7 +98,9 @@ const Hero = () => {
 
 export const BlackButton = ({ children, className }) => {
   return (
-    <button className={`bg-black font-bold text-[15px] font-dm-sans leading-4 cursor-pointer text-white px-8 py-4 rounded-[8px] flex items-center gap-2 ${className}`}>
+    <button
+      className={`bg-black font-bold text-[15px] font-dm-sans leading-4 cursor-pointer text-white px-8 py-4 rounded-[8px] flex items-center gap-2 ${className}`}
+    >
       {children}
       <ArrowUpRightIcon className="text-white w-6 h-6" />
     </button>
@@ -111,7 +108,9 @@ export const BlackButton = ({ children, className }) => {
 };
 export const TransparentButton = ({ children, className }) => {
   return (
-    <button className={`bg-transparent text-black px-8 py-4 font-bold text-[15px] font-dm-sans leading-4 cursor-pointer border border-black rounded-[8px] flex items-center gap-2 ${className}`}>
+    <button
+      className={`bg-transparent text-black px-8 py-4 font-bold text-[15px] font-dm-sans leading-4 cursor-pointer border border-black rounded-[8px] flex items-center gap-2 ${className}`}
+    >
       {children}
       <ArrowUpRightIcon className="text-heading w-6 h-6" />
     </button>
