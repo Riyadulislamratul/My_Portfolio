@@ -4,6 +4,8 @@ import Services from '../components/Services'
 import Intro from '../components/Intro'
 import Details from '../components/Details'
 import RecentWorks from '../components/RecentWorks'
+import Feedback from '../components/Feedback'
+import Blog from '../components/Blog'
 
 const HomePage = () => {
   return (
@@ -13,6 +15,8 @@ const HomePage = () => {
     <Intro />
     <Details />
     <RecentWorks />
+    <Feedback />
+    <Blog />
     </>
   )
 }

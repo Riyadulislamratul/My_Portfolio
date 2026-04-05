@@ -8,7 +8,7 @@ import {  ArrowUpRightIcon } from "lucide-react";
 
 const RecentWorks = () => {
   return (
-    <Section className="bg-orange">
+    <section className="bg-orange">
       <Container>
         <div className="margin-0-auto py-25">
           <div className="text-center">
@@ -38,7 +38,7 @@ const RecentWorks = () => {
           </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 };
 
