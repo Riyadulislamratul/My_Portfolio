@@ -1,12 +1,16 @@
 import React from "react";
 import Container from "./Container";
-import Section from "./Section";
 import { ArrowDown, ArrowUpRightIcon } from "lucide-react";
 import Behance from "../assets/behance.svg";
 import Dribbble from "../assets/dribble.svg";
 import LinkedIn from "../assets/linkedin.svg";
 import Github from "../assets/github.svg";
 import { Link } from "react-router";
+import Gray from "../assets/gray.jpg";
+import Orange from "../assets/orange.jpg";
+import ImageBg from "../assets/img.png";
+import MyImage from "../assets/img.jpg";
+
 
 const Hero = () => {
   return (
@@ -43,9 +47,17 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div></div>
-          <div className="size-45 p-5.25 relative ">
-            <Link to="/contact" className="size-34.25 rounded-full border-[6px] cursor-pointer border-brand flex items-center justify-center absolute top-56 right-0 text-[15px]">
+          <div className="relative">
+            <div className="absolute -top-126 -right-181 w-[788px] h-[850px]">
+              <img src={ImageBg} alt="" className="w-full" />
+            </div>
+            {/* <div className="absolute -top-106 -right-143 z-2 w-[488px] h-[350px]">
+              <img src={MyImage} alt="" className="w-full z-10 rounded-full" />
+            </div> */}
+          </div>
+          {/* Circle */}
+          <div className="size-45 p-5.25 relative z-10">
+            <Link to="/contact" className="size-34.25 rounded-full border-[6px] cursor-pointer border-brand flex items-center justify-center absolute top-56 -right-16 text-[15px]">
               <div className="absolute w-full h-full animate-spin-slow">
                 <svg viewBox="0 0 200 200" className="w-full h-full">
                   <path

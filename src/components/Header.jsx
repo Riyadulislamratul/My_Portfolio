@@ -16,16 +16,13 @@ const Header = () => {
             <p className="font-bold font-dm-sans text-[15px] text-heading bg-transparent z-2">
               Let's Talk
             </p>
-            <ArrowUpRightIcon className="text-heading" />
+            <ArrowUpRightIcon className="text-heading z-2"  />
           </div>
-          <div className="h-full bg-heading w-[100px] px-9.5 py-7 cursor-pointer ">
+          <div className="h-full bg-heading w-[100px] px-9.5 py-7 cursor-pointer z-2">
               <Equal className="text-white" />
           </div>
         </div>
       </div>
-       <div className="absolute top-0 right-25 w-117.5 h-20 bg-brand z-1"
-       style={{ clipPath: 'polygon(30% 0, 100% 0, 100% 100%, 0 100%)' }}
-        />
     </nav>
   );
 };
