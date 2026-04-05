@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import Services from '../components/Services'
 import Intro from '../components/Intro'
 import Details from '../components/Details'
+import RecentWorks from '../components/RecentWorks'
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
     <Services />
     <Intro />
     <Details />
+    <RecentWorks />
     </>
   )
 }
