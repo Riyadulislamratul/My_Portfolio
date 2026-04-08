@@ -32,7 +32,6 @@
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
   --breakpoint-xl: 81rem;
-  --breakpoint-2xl: 96rem;
 }
 
 @keyframes spin-slow {
