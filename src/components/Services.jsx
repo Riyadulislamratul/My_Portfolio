@@ -3,6 +3,8 @@ import Section from "./Section";
 import Container from "./Container";
 import { ArrowUpRightIcon } from "lucide-react";
 import Icon6 from "../assets/icons/icon6.png";
+import Reveal from "./Reveal";
+import { Stagger } from "./Stagger";
 
 const Services = () => {
   return (
@@ -10,7 +12,8 @@ const Services = () => {
       <Container>
         <div >
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10 xl:gap-33.5 w-full mb-8 md:mb-12">
-            <div>
+            <Reveal direction="left">
+              <div>
               <p className="text-brand font-syne text-lg md:text-[20px] font-bold">
                 What I Do
               </p>
@@ -18,23 +21,29 @@ const Services = () => {
                 My specialties
               </h2>
             </div>
-            <div>
+            </Reveal>
+            <Reveal direction="right">
+              <div>
               <p className="font-dm-sans font-normal text-base md:text-lg lg:text-[18px] leading-6 md:leading-7 mt-0 lg:mt-7.5 text-heading/60">
                 Synergistically seize front-end methods of empowerment without
                 extensive core competencies. Progressively repurpose alternative
                 platforms
               </p>
             </div>
+            </Reveal>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[auto_416px] gap-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <Reveal>
+              <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
               <ServiceCard title="Interaction design" img={Icon6} />
               <ServiceCard title="Webflow development" img={Icon6} />
               <ServiceCard title="Interaction design" img={Icon6} />
               <ServiceCard title="Webflow development" img={Icon6} />
               <ServiceCard title="Interaction design" img={Icon6} />
               <ServiceCard title="Webflow" img={Icon6} />
-            </div>
+            </Stagger>
+            </Reveal>
+            <Reveal direction="right">
             <div>
               <div className="px-4 md:px-6 py-6 md:py-9 bg-heading rounded-2xl mt-6 lg:mt-0">
                 <ArrowUpRightIcon className="text-[#F8B144] w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 justify-self-end" />
@@ -46,6 +55,7 @@ const Services = () => {
                 </h3>
               </div>
             </div>
+            </Reveal>
           </div>
         </div>
       </Container>

@@ -12,54 +12,64 @@ const Footer = () => {
   return (
     <Section className="bg-black pt-30 pb-15">
       <Container>
-        <div className="">
-          <div className="grid grid-cols-3 gap-6">
+        <div className="px-4 xl:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Left Section */}
             <div>
-              <h3 className="text-white font-bold font-syne text-[64px] mt-12 mb-10 leading-18 tracking-[0.015em]">
+              <h3 className="text-white font-bold font-syne text-3xl md:text-4xl lg:text-5xl mb-6 leading-tight">
                 Let’s work together
               </h3>
-              <div className="flex items-center gap-3">
-                <p className="text-white text-[20px] font-syne font-bold">
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4">
+                <p className="text-white text-base md:text-lg font-syne font-bold">
                   Frontend Developer |
                 </p>
-                <div className="flex items-center gap-5">
-                  <Link to="https://www.behance.net/" target="_blank" rel="noopener noreferrer">
-                    <img src={Behance} alt="Behance" className="w-6 h-6" />
+
+                <div className="flex items-center gap-4">
+                  <Link to="https://www.behance.net/" target="_blank">
+                    <img src={Behance} className="w-5 h-5" />
                   </Link>
-                  <Link to="https://dribbble.com/" target="_blank" rel="noopener noreferrer">
-                    <img src={Dribbble} alt="Dribbble" className="w-6 h-6" />
+                  <Link to="https://dribbble.com/" target="_blank">
+                    <img src={Dribbble} className="w-5 h-5" />
                   </Link>
-                  <Link to="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">
-                    <img src={LinkedIn} alt="LinkedIn" className="w-6 h-6" />
+                  <Link to="https://www.linkedin.com/" target="_blank">
+                    <img src={LinkedIn} className="w-5 h-5" />
                   </Link>
-                  <Link to="https://github.com/" target="_blank" rel="noopener noreferrer">
-                    <img src={Github} alt="Github" className="w-6 h-6" />
+                  <Link to="https://github.com/" target="_blank">
+                    <img src={Github} className="w-5 h-5" />
                   </Link>
                 </div>
               </div>
             </div>
+
+            {/* Cards */}
             <BlackCard
-              title="Looking for a hectic developer?"
+              title="Looking for a developer?"
               contact="riadulislamratul93@gmail.com"
             />
             <BlackCard
-              title="Want a more in-depth look at my history??"
+              title="Want a more in-depth look at my history?"
               contact="+8801-8917-46139"
             />
           </div>
-          <div className="relative">
-            <h1 className="text-orange font-black font-syne text-[69px] mt-18  after:absolute after:w-full after:h-px after:bg-white/20 after:left-0 after:top-45">
-            RIYADUL ISLAM RATUL
-          </h1>
+          <div className="relative mt-16">
+            <h1 className="text-orange font-black font-syne text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center">
+              RIYADUL ISLAM RATUL
+            </h1>
+
+            <div className="w-full h-px bg-white/20 mt-6"></div>
           </div>
-          <div className="flex justify-between mt-24">
-            <p className="text-white font-dm-sans text-lg">©2026 Riyadul Islam Ratul, All Rights Reserved</p>
-            <button 
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-white font-dm-sans text-lg flex items-center gap-2 cursor-pointer hover:text-brand transition-colors"
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-12 text-center md:text-left">
+            <p className="text-white text-sm md:text-base">
+              ©2026 Riyadul Islam Ratul, All Rights Reserved
+            </p>
+
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="text-white flex items-center gap-2 hover:text-brand transition"
             >
-              Back to top 
-              <ArrowUp className='text-brand'/>
+              Back to top
+              <ArrowUp className="text-brand" />
             </button>
           </div>
         </div>
@@ -72,7 +82,9 @@ export const BlackCard = ({ title, contact }) => {
   return (
     <div className="bg-heading border text-white relative rounded-2xl border-white/20">
       <div className="px-7 py-9">
-        <p className="pb-23 text-[20px] font-bold font-syne leading-7 absolute top-9">{title}</p>
+        <p className="pb-23 text-[20px] font-bold font-syne leading-7 absolute top-9">
+          {title}
+        </p>
         <div className="flex justify-between gap-7 pt-36.5">
           <p className="text-[17px] font-bold font-syne leading-8 lining-nums text-brand">
             {contact}

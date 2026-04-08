@@ -9,41 +9,65 @@ import Github from "../assets/github.svg";
 import { Link } from "react-router";
 import HeroImg from "../assets/hero-image.png";
 import MyImg from "../assets/my-image.png";
+import Reveal from "./Reveal";
+import { Stagger, StaggerItem } from "./Stagger";
+
 
 const Hero = () => {
   return (
     <section className="bg-orange pt-15 overflow-hidden px-4 xl:px-0">
       <Container>
-        <div className="hidden  lg:flex justify-between items-center gap-40.5 relative">
+       <Reveal>
+        <Stagger>
+           <div className="hidden  lg:flex justify-between items-center gap-40.5 relative">
           <div>
+            <StaggerItem>
+
             <h3 className="text-[32px] font-syne font-bold text-heading mb-2 leading-10">
               Hello, I’m
             </h3>
+            </StaggerItem>
+            <StaggerItem>
             <h1 className="text-[80px] w-125 font-bold leading-27.5 text-heading mb-6 font-syne">
               Riyadul Islam Ratul
             </h1>
+            </StaggerItem>
+            <StaggerItem>
             <h3 className="text-2xl font-syne text-heading font-bold leading-8 mb-7.5 lg:w-70 xl:w-full">
               Frontend Developer | React • JavaScript • Next.js
             </h3>
+            </StaggerItem>
+            <StaggerItem>
             <div className="mb-32.5 cursor-pointer flex items-center gap-7.5">
               <BlackButton>Let's Talk</BlackButton>
               <TransparentButton>My Work</TransparentButton>
             </div>
+            </StaggerItem>
+            <StaggerItem>
             <div className="flex items-center gap-8 pb-31.5">
               <div className="flex items-center gap-2 ">
+                <StaggerItem>
                 <h3 className="font-bold text-[44px] font-syne leading-13.5 text-heading lining-nums">
                   1.2k+
                 </h3>
+                </StaggerItem>
+                <StaggerItem>
                 <p>Worldwide Clients</p>
+                </StaggerItem>
               </div>
+              <StaggerItem>
               <div>|</div>
+              </StaggerItem>
+              <StaggerItem>
               <div className="flex items-center gap-5">
                 <img src={Behance} alt="Behance" className="w-6 h-6" />
                 <img src={Dribbble} alt="Dribbble" className="w-6 h-6" />
                 <img src={LinkedIn} alt="LinkedIn" className="w-6 h-6" />
                 <img src={Github} alt="Github" className="w-6 h-6" />
               </div>
+              </StaggerItem>
             </div>
+            </StaggerItem>
           </div>
           <div className="xl:w-[662px] xl:h-[985px] rounded-[220px] bg-brand rotate-45 absolute xl:-right-104 xl:-top-94 overflow-hidden hidden lg:block lg:w-[500px] lg:h-[900px] lg:-right-52 lg:-top-60">
             <img src={MyImg} alt="Hero" className=" w-full h-full object-cover rotate-316 xl:pt-48 xl:pr-49 lg:pt-52 lg:pr-40" />
@@ -91,6 +115,8 @@ const Hero = () => {
             </Link>
           </div>
         </div>
+        </Stagger>
+       </Reveal>
         {/* Premium Mobile Hero */}
 <div className="lg:hidden flex flex-col items-center text-center px-5 pt-12 pb-10">
 
