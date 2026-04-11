@@ -58,7 +58,8 @@ const Details = () => {
             </div>
           </div>
           </Reveal>
-          <div className="relative">
+          <Reveal direction="right">
+            <div className="relative">
             <motion.div
               key={activeTab}
               initial={{ opacity: 0, x: 50 }}
@@ -73,6 +74,7 @@ const Details = () => {
               {activeTab === "achievements" && <Achievements />}
             </motion.div>
           </div>
+          </Reveal>
         </div>
       </Container>
     </Section>

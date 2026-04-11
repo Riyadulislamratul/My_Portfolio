@@ -17,8 +17,8 @@ const HomePage = () => {
     <Details />
     <RecentWorks />
     {/* <Feedback /> */}
-    {/* <Blog /> */}
-    {/* <Pricing /> */}
+    <Blog />
+    <Pricing />
     </>
   )
 }
