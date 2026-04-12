@@ -52,7 +52,7 @@ const cards = [
     link: "https://modevo-project-with-react.vercel.app/",
   },
   {
-    img: BlogImg2,
+    img: BlogImg4,
     title: "E-commerce Website",
     date: "Mar 27, 2026",
     description:
@@ -60,7 +60,7 @@ const cards = [
     link: "https://e-commerce-five-navy-79.vercel.app/",
   },
   {
-    img: BlogImg3,
+    img: BlogImg2,
     title: "Restaurant Website",
     date: "Oct 28, 2025",
     description:
@@ -68,7 +68,7 @@ const cards = [
     link: "https://riyadulislamratul.github.io/Resturant-Website/",
   },
   {
-    img: BlogImg4,
+    img: BlogImg3,
     title: "Travel Website",
     date: "Apr 21, 2026",
     description:

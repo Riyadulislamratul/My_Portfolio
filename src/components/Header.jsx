@@ -97,8 +97,8 @@ const Header = () => {
             </div>
 
             {/* SOCIAL */}
-            <div className="flex items-center gap-5 z-9000">
-                <img src={Behance} alt="Behance" className="size-4" />
+            <div className="flex items-center gap-10 z-9000">
+                <img src={Behance} alt="Behance" className="w-6.5 h-5" />
                 <img src={Dribbble} alt="Dribbble" className="size-5" />
                 <Link to="https://www.linkedin.com/in/md-riyadul-islam-ratul-16b422326/" target="_blank">
                   <img src={LinkedIn} alt="LinkedIn" className="size-5" />
