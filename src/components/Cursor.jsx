@@ -8,32 +8,32 @@ import { useEffect, useState } from "react";
 const Cursor = () => {
   const [variant, setVariant] = useState("default");
   const [isClicking, setIsClicking] = useState(false);
-  const [theme, setTheme] = useState("dark"); // ✅ FIXED
+  const [theme, setTheme] = useState("dark");
 
-  // Detect background
-const detectBackground = (x, y) => {
-  let el = document.elementFromPoint(x, y);
+  // ✅ Detect background (robust)
+  const detectBackground = (x, y) => {
+    let el = document.elementFromPoint(x, y);
 
-  while (el) {
-    const bg = window.getComputedStyle(el).backgroundColor;
+    while (el) {
+      const bg = window.getComputedStyle(el).backgroundColor;
 
-    if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
-      const match = bg.match(/\d+/g);
-      if (!match) return "dark";
+      if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
+        const match = bg.match(/\d+/g);
+        if (!match) return "dark";
 
-      const [r, g, b] = match.map(Number);
-      const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+        const [r, g, b] = match.map(Number);
+        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
 
-      return brightness > 150 ? "light" : "dark";
+        return brightness > 150 ? "light" : "dark";
+      }
+
+      el = el.parentElement;
     }
 
-    el = el.parentElement; // 👈 move up
-  }
+    return "light";
+  };
 
-  return "light"; // fallback (important!)
-};
-
-  // Motion
+  // Motion values
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -74,13 +74,14 @@ const detectBackground = (x, y) => {
       el.addEventListener("mouseenter", () => handleEnter(el));
       el.addEventListener("mouseleave", handleLeave);
 
+      // Magnetic effect
       el.addEventListener("mousemove", (e) => {
         const rect = el.getBoundingClientRect();
-        const x = rect.left + rect.width / 2;
-        const y = rect.top + rect.height / 2;
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
 
-        mouseX.set(x + (e.clientX - x) * 0.2);
-        mouseY.set(y + (e.clientY - y) * 0.2);
+        mouseX.set(centerX + (e.clientX - centerX) * 0.2);
+        mouseY.set(centerY + (e.clientY - centerY) * 0.2);
       });
     });
 
@@ -96,22 +97,19 @@ const detectBackground = (x, y) => {
     };
   }, []);
 
-  // Variants
+  // Variants (NO blend mode → stable)
   const variants = {
     default: {
       scale: 1,
       backgroundColor: theme === "dark" ? "#fff" : "#000",
-      mixBlendMode: theme === "dark" ? "difference" : "normal",
     },
     hover: {
       scale: 1.8,
       backgroundColor: theme === "dark" ? "#fff" : "#000",
-      mixBlendMode: theme === "dark" ? "difference" : "normal",
     },
     text: {
       scale: 2.5,
       backgroundColor: theme === "dark" ? "#fff" : "#000",
-      mixBlendMode: theme === "dark" ? "difference" : "normal",
     },
     button: {
       scale: 2,
@@ -121,22 +119,26 @@ const detectBackground = (x, y) => {
 
   return (
     <>
-      {/* Main Cursor */}
+      {/* MAIN CURSOR */}
       <motion.div
-        className="fixed top-0 left-0 w-4 h-4 rounded-full pointer-events-none z-50"
+        className="fixed top-0 left-0 w-4 h-4 rounded-full pointer-events-none z-5000"
         style={{
           x: cursorX,
           y: cursorY,
           translateX: "-50%",
           translateY: "-50%",
+          boxShadow:
+            theme === "dark"
+              ? "0 0 0 2px rgba(255,255,255,0.4)"
+              : "0 0 0 2px rgba(0,0,0,0.4)",
         }}
         animate={variants[variant]}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
       />
 
-      {/* Follower */}
+      {/* FOLLOWER */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border rounded-full pointer-events-none z-40"
+        className="fixed top-0 left-0 w-10 h-10 border rounded-full pointer-events-none z-4000"
         style={{
           x: followerX,
           y: followerY,
@@ -144,13 +146,14 @@ const detectBackground = (x, y) => {
           translateY: "-50%",
           scale: isClicking ? 0.8 : 1,
           borderColor: theme === "dark" ? "#fff" : "#000",
+          opacity: 0.6,
         }}
       />
 
-      {/* Click Pulse */}
+      {/* CLICK PULSE */}
       {isClicking && (
         <motion.div
-          className="fixed top-0 left-0 w-6 h-6 border rounded-full pointer-events-none z-30"
+          className="fixed top-0 left-0 w-6 h-6 border rounded-full pointer-events-none z-3000"
           style={{
             x: cursorX,
             y: cursorY,

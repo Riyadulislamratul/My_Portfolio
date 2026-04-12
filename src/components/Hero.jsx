@@ -62,8 +62,13 @@ const Hero = () => {
               <div className="flex items-center gap-5">
                 <img src={Behance} alt="Behance" className="w-6 h-6" />
                 <img src={Dribbble} alt="Dribbble" className="w-6 h-6" />
-                <img src={LinkedIn} alt="LinkedIn" className="w-6 h-6" />
-                <img src={Github} alt="Github" className="w-6 h-6" />
+                <Link to="https://www.linkedin.com/in/md-riyadul-islam-ratul-16b422326/" target="_blank">
+                  <img src={LinkedIn} alt="LinkedIn" className="w-6 h-6" />
+                </Link>
+
+                <Link to="https://github.com/riyadulislamratul" target="_blank">
+                  <img src={Github} alt="Github" className="w-6 h-6" />
+                </Link>
               </div>
               </StaggerItem>
             </div>
