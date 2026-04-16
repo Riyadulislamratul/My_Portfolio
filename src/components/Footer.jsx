@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "./Section";
 import Container from "./Container";
-import { Link } from "react-router";
 import { ArrowUpRightIcon, ArrowUp } from "lucide-react";
 import Behance from "../assets/wh-behance.svg";
 import Dribbble from "../assets/wh-dribble.svg";
@@ -28,18 +27,18 @@ const Footer = () => {
                   </p>
 
                   <div className="flex items-center gap-4">
-                    <Link to="https://www.behance.net/" target="_blank">
+                    <a href="https://www.behance.net/" target="_blank" rel="noreferrer">
                       <img src={Behance} className="w-5 h-5" />
-                    </Link>
-                    <Link to="https://dribbble.com/" target="_blank">
+                    </a>
+                    <a href="https://dribbble.com/" target="_blank" rel="noreferrer">
                       <img src={Dribbble} className="w-5 h-5" />
-                    </Link>
-                    <Link to="https://www.linkedin.com/" target="_blank">
+                    </a>
+                    <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
                       <img src={LinkedIn} className="w-5 h-5" />
-                    </Link>
-                    <Link to="https://github.com/" target="_blank">
+                    </a>
+                    <a href="https://github.com/" target="_blank" rel="noreferrer">
                       <img src={Github} className="w-5 h-5" />
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -48,13 +47,16 @@ const Footer = () => {
               <BlackCard
                 title="Looking for a developer?"
                 contact="riadulislamratul93@gmail.com"
+                type="email"
               />
               <BlackCard
                 title="Want a more in-depth look at my history?"
-                contact="+8801-8917-46139"
+                contact="+8801891746139"
+                type="phone"
               />
             </div>
           </Reveal>
+
           <Reveal direction="up">
             <div className="relative mt-16">
               <h1 className="text-orange font-black font-syne text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center">
@@ -64,6 +66,7 @@ const Footer = () => {
               <div className="w-full h-px bg-white/20 mt-6"></div>
             </div>
           </Reveal>
+
           <Reveal direction="up">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-12 text-center md:text-left">
               <p className="text-white text-sm md:text-base">
@@ -85,21 +88,32 @@ const Footer = () => {
   );
 };
 
-export const BlackCard = ({ title, contact }) => {
+export const BlackCard = ({ title, contact, type }) => {
+  // Decide link based on type
+  const link =
+    type === "email"
+      ? `mailto:${contact}`
+      : type === "phone"
+      ? `tel:${contact}`
+      : "#";
+
   return (
-    <div className="bg-heading border text-white relative rounded-2xl border-white/20">
-      <div className="px-7 py-9">
-        <p className="pb-23 text-[20px] font-bold font-syne leading-7 absolute top-9">
-          {title}
-        </p>
-        <div className="flex justify-between gap-7 pt-36.5">
-          <p className="text-[17px] font-bold font-syne leading-8 lining-nums text-brand">
-            {contact}
+    <a href={link} className="block">
+      <div className="bg-heading border text-white relative rounded-2xl border-white/20 hover:bg-white/5 transition cursor-pointer">
+        <div className="px-7 py-9">
+          <p className="pb-23 text-[20px] font-bold font-syne leading-7 absolute top-9">
+            {title}
           </p>
-          <ArrowUpRightIcon className="text-white w-10 h-10" />
+
+          <div className="flex justify-between gap-7 pt-36.5">
+            <p className="text-[17px] font-bold font-syne leading-8 lining-nums text-brand">
+              {contact}
+            </p>
+            <ArrowUpRightIcon className="text-white w-10 h-10" />
+          </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
