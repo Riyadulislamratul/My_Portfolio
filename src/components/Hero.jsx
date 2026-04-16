@@ -7,7 +7,6 @@ import Dribbble from "../assets/dribble.svg";
 import LinkedIn from "../assets/linkedin.svg";
 import Github from "../assets/github.svg";
 import { Link } from "react-router";
-import HeroImg from "../assets/hero-image.png";
 import MyImg from "../assets/my-image.png";
 import Reveal from "./Reveal";
 import { Stagger, StaggerItem } from "./Stagger";

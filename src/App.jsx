@@ -3,6 +3,11 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import MainLayout from './components/MainLayout';
 import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ProjectPage from './pages/ProjectPage';
+import ProjectSinglePage from './pages/ProjectSinglePage';
+import NotFoundPage from './pages/NotFoundPage';
+import BlogPage from './pages/BlogPage';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +18,26 @@ const router = createBrowserRouter([
         index: true,
         element: <HomePage />
       },
+      {
+        path: "/about",
+        element: <AboutPage />
+      },
+      {
+        path: "/projects",
+        element: <ProjectPage />
+      },
+      {
+        path: "/projects/:id",
+        element: <ProjectSinglePage />
+      },
+      {
+        path: "*",
+        element: <NotFoundPage />
+      },
+      {
+        path: "/blog",
+        element: <BlogPage />
+      }
     ]
   },
 ]);

@@ -6,15 +6,32 @@ import Behance from "../assets/icons/behance.png";
 import Dribbble from "../assets/icons/dribble.png";
 import LinkedIn from "../assets/icons/linkedin.png";
 import Github from "../assets/icons/github.png";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
 
+  // ✅ Detect current route
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+
+  // ✅ Menu items
+  const menuItems = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Project", path: "/projects" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
+  ];
+
   return (
     <>
       {/* NAVBAR */}
-      <nav className="flex justify-between items-center bg-[#FFE9D9] h-20 relative">
+      <nav
+        className={`flex justify-between items-center h-20 relative ${
+          isHome ? "bg-[#FFE9D9]" : "bg-white"
+        }`}
+      >
         {/* Logo */}
         <Reveal direction="left">
           <div
@@ -34,27 +51,39 @@ const Header = () => {
             <div className="flex items-center gap-5 h-full">
               {/* Let's Talk */}
               <div className="flex items-center gap-1 cursor-pointer">
-                <p className="font-bold font-dm-sans text-[15px] text-heading">
+                <p
+                  className={`font-bold font-dm-sans text-[15px] ${
+                    isHome ? "text-heading" : "text-black"
+                  }`}
+                >
                   Let's Talk
                 </p>
-                <ArrowUpRightIcon className="text-heading" />
+                <ArrowUpRightIcon
+                  className={isHome ? "text-heading" : "text-black"}
+                />
               </div>
 
               {/* MENU BUTTON */}
               <div
                 onClick={() => setOpen(true)}
-                className="h-full bg-heading w-[100px] px-9.5 py-7 cursor-pointer"
+                className={`h-full w-[100px] px-9.5 py-7 cursor-pointer ${
+                  isHome ? "bg-heading" : "bg-black"
+                }`}
               >
                 <Equal className="text-white" />
               </div>
             </div>
           </div>
 
-          {/* Decorative shape */}
-          <div
-            className="absolute top-0 right-25 hidden xl:block w-102.5 h-20 bg-brand z-1"
-            style={{ clipPath: "polygon(19% 0, 100% 0, 100% 100%, 0 100%)" }}
-          />
+          {/* ✅ Clip-path only on home */}
+          {isHome && (
+            <div
+              className="absolute top-0 right-25 hidden xl:block w-102.5 h-20 bg-brand z-1"
+              style={{
+                clipPath: "polygon(19% 0, 100% 0, 100% 100%, 0 100%)",
+              }}
+            />
+          )}
         </Reveal>
       </nav>
 
@@ -80,33 +109,46 @@ const Header = () => {
 
             {/* MENU ITEMS */}
             <div className="flex flex-col gap-6">
-              {["Home", "About", "Project", "Blog", "Contact"].map(
-                (item, index) => (
+              {menuItems.map((item, index) => (
+                <Link
+                  to={item.path}
+                  key={item.name}
+                  onClick={() => setOpen(false)}
+                >
                   <motion.div
-                    key={item}
                     initial={{ opacity: 0, x: 40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     className="flex justify-between items-center text-white text-xl border-b border-white/20 pb-4 cursor-pointer group"
                   >
-                    <span>{item}</span>
+                    <span>{item.name}</span>
                     <ArrowUpRightIcon className="opacity-70 group-hover:translate-x-1 group-hover:-translate-y-1 transition" />
                   </motion.div>
-                ),
-              )}
+                </Link>
+              ))}
             </div>
 
             {/* SOCIAL */}
-            <div className="flex items-center gap-10 z-9000">
-                <img src={Behance} alt="Behance" className="w-6.5 h-5" />
-                <img src={Dribbble} alt="Dribbble" className="size-5" />
-                <Link to="https://www.linkedin.com/in/md-riyadul-islam-ratul-16b422326/" target="_blank">
-                  <img src={LinkedIn} alt="LinkedIn" className="size-5" />
-                </Link>
-                <Link to="https://github.com/riyadulislamratul" target="_blank">
-                  <img src={Github} alt="Github" className="size-5" />
-                </Link>
-              </div>
+            <div className="flex items-center gap-10 z-[9999]">
+              <img src={Behance} alt="Behance" className="w-6.5 h-5" />
+              <img src={Dribbble} alt="Dribbble" className="size-5" />
+
+              <a
+                href="https://www.linkedin.com/in/md-riyadul-islam-ratul-16b422326/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={LinkedIn} alt="LinkedIn" className="size-5" />
+              </a>
+
+              <a
+                href="https://github.com/riyadulislamratul"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={Github} alt="Github" className="size-5" />
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

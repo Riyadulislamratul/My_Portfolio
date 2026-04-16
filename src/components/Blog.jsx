@@ -16,7 +16,7 @@ const Blog = () => {
         <Reveal direction="up">
           <div className="lg:text-center pl-6">
             <p className="text-brand font-syne font-bold text-lg md:text-[18px]">
-              Projects
+              Blogs
             </p>
             <h3 className="font-syne font-bold text-3xl md:text-5xl lg:text-[64px] text-heading mt-2.5 mb-8 md:mb-12">
               My Projects

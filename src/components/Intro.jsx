@@ -1,11 +1,7 @@
 import React from "react";
 import Section from "./Section";
 import Container from "./Container";
-import { Link } from "react-router";
-import Intro_Bg from "../assets/intro-bg.png";
 import { BlackButton } from "./Hero";
-import Hi from "../assets/hii.png";
-import Helloo from "../assets/helloo.png";
 import Hello from "../assets/hello.png";
 import Reveal from "./Reveal";
 import { Stagger, StaggerItem } from "./Stagger";
@@ -18,12 +14,12 @@ const Intro = () => {
           <Reveal direction="left">
             <div>
               <div className="w-full max-w-[550px] mx-auto">
-  <img
-    src={Hello}
-    alt=""
-    className="w-full h-auto object-contain"
-  />
-</div>
+                <img
+                  src={Hello}
+                  alt=""
+                  className="w-full h-auto object-contain"
+                />
+              </div>
             </div>
           </Reveal>
           <Reveal direction="right">
