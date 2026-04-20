@@ -27,16 +27,32 @@ const Footer = () => {
                   </p>
 
                   <div className="flex items-center gap-4">
-                    <a href="https://www.behance.net/" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://www.behance.net/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <img src={Behance} className="w-5 h-5" />
                     </a>
-                    <a href="https://dribbble.com/" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://dribbble.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <img src={Dribbble} className="w-5 h-5" />
                     </a>
-                    <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://www.linkedin.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <img src={LinkedIn} className="w-5 h-5" />
                     </a>
-                    <a href="https://github.com/" target="_blank" rel="noreferrer">
+                    <a
+                      href="https://github.com/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <img src={Github} className="w-5 h-5" />
                     </a>
                   </div>
@@ -94,8 +110,8 @@ export const BlackCard = ({ title, contact, type }) => {
     type === "email"
       ? `mailto:${contact}`
       : type === "phone"
-      ? `tel:${contact}`
-      : "#";
+        ? `tel:${contact}`
+        : "#";
 
   return (
     <a href={link} className="block">

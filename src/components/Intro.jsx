@@ -81,7 +81,7 @@ const Intro = () => {
                   </StaggerItem>
                 </div>
                 <StaggerItem>
-                  <a href="/resume.pdf" target="_blank" download>
+                  <a href="/Resume of MD Riyadul Islam Ratul.pdf" target="_blank" download>
                     <BlackButton className="mt-8 md:mt-10 md:w-auto">
                       Download my resume
                     </BlackButton>

@@ -8,6 +8,8 @@ import ProjectPage from './pages/ProjectPage';
 import ProjectSinglePage from './pages/ProjectSinglePage';
 import NotFoundPage from './pages/NotFoundPage';
 import BlogPage from './pages/BlogPage';
+import BlogSinglePage from './pages/BlogSinglePage';
+import ContactPage from './pages/ContactPage';
 
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <BlogPage />
+      },
+      {
+        path: "/blog/:id",
+        element: <BlogSinglePage />
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />
       }
     ]
   },
