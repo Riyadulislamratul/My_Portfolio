@@ -1,62 +1,57 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import MainLayout from './components/MainLayout';
-import HomePage from './pages/HomePage';
-import AboutPage from './pages/AboutPage';
-import ProjectPage from './pages/ProjectPage';
-import ProjectSinglePage from './pages/ProjectSinglePage';
-import NotFoundPage from './pages/NotFoundPage';
-import BlogPage from './pages/BlogPage';
-import BlogSinglePage from './pages/BlogSinglePage';
-import ContactPage from './pages/ContactPage';
 
+import MainLayout from "./components/MainLayout";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ProjectPage from "./pages/ProjectPage";
+import ProjectSinglePage from "./pages/ProjectSinglePage";
+import NotFoundPage from "./pages/NotFoundPage";
+import BlogPage from "./pages/BlogPage";
+import BlogSinglePage from "./pages/BlogSinglePage";
+import ContactPage from "./pages/ContactPage";
+
+import Loader from "./components/Loader";
+
+// ✅ Router (same as before)
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
     children: [
-      {
-        index: true,
-        element: <HomePage />
-      },
-      {
-        path: "/about",
-        element: <AboutPage />
-      },
-      {
-        path: "/projects",
-        element: <ProjectPage />
-      },
-      {
-        path: "/projects/:id",
-        element: <ProjectSinglePage />
-      },
-      {
-        path: "*",
-        element: <NotFoundPage />
-      },
-      {
-        path: "/blog",
-        element: <BlogPage />
-      },
-      {
-        path: "/blog/:id",
-        element: <BlogSinglePage />
-      },
-      {
-        path: "/contact",
-        element: <ContactPage />
-      }
-    ]
+      { index: true, element: <HomePage /> },
+      { path: "/about", element: <AboutPage /> },
+      { path: "/projects", element: <ProjectPage /> },
+      { path: "/projects/:id", element: <ProjectSinglePage /> },
+      { path: "/blog", element: <BlogPage /> },
+      { path: "/blog/:id", element: <BlogSinglePage /> },
+      { path: "/contact", element: <ContactPage /> },
+      { path: "*", element: <NotFoundPage /> },
+    ],
   },
 ]);
 
-
 const App = () => {
-  return (
-    <RouterProvider router={router} />
-  )
-}
+  const [isLoading, setIsLoading] = useState(true);
 
-export default App
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1800); // slightly faster = better UX
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <>
+      {/* ✅ Always render your app */}
+      <RouterProvider router={router} />
+
+      {/* ✅ Overlay loader on top */}
+      <Loader isLoading={isLoading} />
+    </>
+  );
+};
+
+export default App;
