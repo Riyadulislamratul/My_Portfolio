@@ -111,10 +111,10 @@ const Cursor = () => {
       scale: 2.5,
       backgroundColor: theme === "dark" ? "#fff" : "#000",
     },
-    button: {
-      scale: 2,
-      backgroundColor: theme === "dark" ? "#fff" : "#000",
-    },
+   button: {
+  scale: 2.8, // was 2 → now slightly bigger on button hover
+  backgroundColor: theme === "dark" ? "#fff" : "#000",
+},
   };
 
   return (
