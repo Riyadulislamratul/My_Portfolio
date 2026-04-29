@@ -7,6 +7,7 @@ import RecentWorks from '../components/RecentWorks'
 import Feedback from '../components/Feedback'
 import Blog from '../components/Blog'
 import Pricing from '../components/Pricing'
+import TechStack from '../components/TechStack'
 
 const HomePage = () => {
   return (
@@ -18,6 +19,7 @@ const HomePage = () => {
     <RecentWorks />
     {/* <Feedback /> */}
     <Blog />
+    <TechStack />
     <Pricing />
     </>
   )

@@ -40,7 +40,7 @@ const ContactPage = () => {
                     <Cards
                       img={MailIcon}
                       title="Email"
-                      description="K4d5o@example.com"
+                      description="riadulislamratul93@gmail.com"
                     />
                   </StaggerItem>
 
@@ -69,66 +69,90 @@ const ContactPage = () => {
             <Stagger>
               <div className="p-4 md:p-6 rounded-lg w-full">
                 <form className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-                  <Input label="Name" placeholder="Your name*" />
-                  <Input label="Email" type="email" placeholder="Your email*" />
-                  <Input label="Phone" placeholder="Your number" />
-                  <Input label="Subject*" placeholder="Your subject*" />
+                  <StaggerItem>
+                    <Input label="Name" placeholder="Your name*" />
+                  </StaggerItem>
+                  <StaggerItem>
+                    <Input
+                      label="Email"
+                      type="email"
+                      placeholder="Your email*"
+                    />
+                  </StaggerItem>
+                  <StaggerItem>
+                    <Input label="Phone" placeholder="Your number" />
+                  </StaggerItem>
+                  <StaggerItem>
+                    <Input label="Subject*" placeholder="Your subject*" />
+                  </StaggerItem>
 
-                  <div className="md:col-span-2 flex flex-col gap-2">
-                    <label className="text-sm text-heading">Message</label>
-                    <textarea
-                      rows="4"
-                      placeholder="Type your message"
-                      className="w-full border text-heading/40 rounded-md px-4 py-3 bg-transparent focus:outline-none focus:ring-1 focus:ring-black resize-none"
-                    ></textarea>
-                  </div>
+                  <StaggerItem>
+                    <div className="md:col-span-2 flex flex-col gap-2">
+                      <label className="text-sm text-heading">Message</label>
+                      <textarea
+                        rows="4"
+                        placeholder="Type your message"
+                        className="w-full border text-heading/40 rounded-md px-4 py-3 bg-transparent focus:outline-none focus:ring-1 focus:ring-black resize-none lg:w-135"
+                      ></textarea>
+                    </div>
+                  </StaggerItem>
                 </form>
 
-                <BlackButton className="mt-5 w-full md:w-auto">
-                  Submit
-                </BlackButton>
+                <StaggerItem>
+                  <BlackButton className="mt-5 w-full md:w-auto">
+                    Submit
+                  </BlackButton>
+                </StaggerItem>
 
                 {/* Social */}
                 <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-10 md:mt-14">
                   <div className="hidden sm:block h-[1px] w-20 md:w-28 bg-gray-300"></div>
 
-                  <p className="text-base md:text-lg font-medium text-gray-900">
-                    Follow me
-                  </p>
+                  <StaggerItem>
+                    <p className="text-base md:text-lg font-medium text-gray-900">
+                      Follow me
+                    </p>
+                  </StaggerItem>
 
                   <div className="flex items-center gap-4 md:gap-5">
-                    <img
-                      src={Behance}
-                      alt="Behance"
-                      className="w-5 h-5 md:w-6 md:h-6"
-                    />
-                    <img
-                      src={Dribbble}
-                      alt="Dribbble"
-                      className="w-5 h-5 md:w-6 md:h-6"
-                    />
-
-                    <Link
-                      to="https://www.linkedin.com/in/md-riyadul-islam-ratul-16b422326/"
-                      target="_blank"
-                    >
+                    <StaggerItem>
                       <img
-                        src={LinkedIn}
-                        alt="LinkedIn"
+                        src={Behance}
+                        alt="Behance"
                         className="w-5 h-5 md:w-6 md:h-6"
                       />
-                    </Link>
-
-                    <Link
-                      to="https://github.com/riyadulislamratul"
-                      target="_blank"
-                    >
+                    </StaggerItem>
+                    <StaggerItem>
                       <img
-                        src={Github}
-                        alt="Github"
+                        src={Dribbble}
+                        alt="Dribbble"
                         className="w-5 h-5 md:w-6 md:h-6"
                       />
-                    </Link>
+                    </StaggerItem>
+                    <StaggerItem>
+                      <Link
+                        to="https://www.linkedin.com/in/md-riyadul-islam-ratul-16b422326/"
+                        target="_blank"
+                      >
+                        <img
+                          src={LinkedIn}
+                          alt="LinkedIn"
+                          className="w-5 h-5 md:w-6 md:h-6"
+                        />
+                      </Link>
+                    </StaggerItem>
+                    <StaggerItem>
+                      <Link
+                        to="https://github.com/riyadulislamratul"
+                        target="_blank"
+                      >
+                        <img
+                          src={Github}
+                          alt="Github"
+                          className="w-5 h-5 md:w-6 md:h-6"
+                        />
+                      </Link>
+                    </StaggerItem>
                   </div>
                 </div>
               </div>
@@ -141,10 +165,6 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-
-/* ========================= */
-/* Reusable Input Component  */
-/* ========================= */
 
 const Input = ({ label, type = "text", placeholder }) => {
   return (
@@ -159,13 +179,9 @@ const Input = ({ label, type = "text", placeholder }) => {
   );
 };
 
-/* ========================= */
-/* Cards Component           */
-/* ========================= */
-
 const Cards = ({ img, title, description }) => {
   return (
-    <div className="w-full lg:w-104 pb-3 border-b border-heading/10">
+    <div className="w-full lg:w-104 pb-3 border-b border-heading/10 lining-nums">
       <div className="flex gap-4 items-start">
         <div className="w-7 h-7 md:w-8 md:h-8">
           <img src={img} alt="" />
