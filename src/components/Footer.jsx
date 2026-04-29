@@ -2,10 +2,10 @@ import React from "react";
 import Section from "./Section";
 import Container from "./Container";
 import { ArrowUpRightIcon, ArrowUp } from "lucide-react";
-import Behance from "../assets/wh-behance.svg";
-import Dribbble from "../assets/wh-dribble.svg";
-import LinkedIn from "../assets/wh-linkedin.svg";
-import Github from "../assets/wh-git.svg";
+import Behance from "../assets/icons/wh-behance.svg";
+import Dribbble from "../assets/icons/wh-dribble.svg";
+import LinkedIn from "../assets/icons/wh-linkedin.svg";
+import Github from "../assets/icons/wh-git.svg";
 import Reveal from "./Reveal";
 
 const Footer = () => {

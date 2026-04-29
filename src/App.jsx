@@ -14,7 +14,6 @@ import ContactPage from "./pages/ContactPage";
 
 import Loader from "./components/Loader";
 
-// ✅ Router (same as before)
 const router = createBrowserRouter([
   {
     path: "/",
@@ -45,10 +44,7 @@ const App = () => {
 
   return (
     <>
-      {/* ✅ Always render your app */}
       <RouterProvider router={router} />
-
-      {/* ✅ Overlay loader on top */}
       <Loader isLoading={isLoading} />
     </>
   );

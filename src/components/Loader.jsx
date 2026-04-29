@@ -4,73 +4,16 @@ export default function Loader({ isLoading }) {
   const columns = Array.from({ length: 6 });
   const name = "RIYAD";
 
-  const textVariants = {
-    hidden: {},
-    show: {
-      transition: {
-        staggerChildren: 0.12,
-      },
-    },
-    exit: {
-      transition: {
-        staggerChildren: 0.05,
-        staggerDirection: -1,
-      },
-    },
-  };
-
-  const letterVariants = {
-    hidden: { opacity: 0, y: 30, filter: "blur(10px)" },
-    show: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
-      transition: { duration: 0.6, ease: [0.76, 0, 0.24, 1] },
-    },
-    exit: {
-      opacity: 0,
-      y: -20,
-      filter: "blur(10px)",
-      transition: { duration: 0.3 },
-    },
-  };
+  // Grid timing
+  const columnDelay = 0.12;
+  const revealDuration = 0.7;
 
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait">
       {isLoading && (
-        <motion.div className="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden">
+        <motion.div className="fixed inset-0 z-[9999] overflow-hidden">
 
-          {/* ✅ NAME */}
-          <motion.h1
-            className="
-              absolute 
-              text-white 
-              font-bold 
-              flex 
-              z-10 
-              tracking-[0.15em]
-              select-none
-            "
-            style={{
-              fontSize: "clamp(60px, 18vw, 220px)", // 🔥 responsive magic
-            }}
-            variants={textVariants}
-            initial="hidden"
-            animate="show"
-            exit="exit"
-          >
-            {name.split("").map((char, i) => (
-              <motion.span
-                key={i}
-                variants={letterVariants}
-                className="inline-block"
-              >
-                {char}
-              </motion.span>
-            ))}
-          </motion.h1>
-
-          {/* ✅ GRID */}
+          {/* ✅ FULLSCREEN GRID */}
           <div className="absolute inset-0 grid grid-cols-6">
             {columns.map((_, i) => (
               <motion.div
@@ -82,10 +25,68 @@ export default function Loader({ isLoading }) {
                 transition={{
                   duration: 0.9,
                   ease: [0.76, 0, 0.24, 1],
-                  delay: i * 0.08,
+                  delay: i * columnDelay,
                 }}
               />
             ))}
+          </div>
+
+          {/* ✅ PERFECT CENTER OVERLAY */}
+          <div className="absolute inset-0 z-10 flex items-center justify-center px-4 text-center pointer-events-none">
+            <motion.h1
+              className="
+                flex
+                items-center
+                justify-center
+                font-bold
+                text-white
+                select-none
+                whitespace-nowrap
+                leading-none
+                text-center
+              "
+              style={{
+                fontSize: "clamp(48px, 16vw, 220px)", // 🔥 scales perfectly
+                letterSpacing: "clamp(0.08em, 0.12em, 0.15em)", // 🔥 responsive spacing
+              }}
+            >
+              {name.split("").map((char, i) => (
+                <span
+                  key={i}
+                  className="relative inline-flex items-center justify-center overflow-hidden"
+                >
+                  {/* Placeholder keeps exact spacing */}
+                  <span className="opacity-0">{char}</span>
+
+                  {/* Animated visible letter */}
+                  <motion.span
+                    className="absolute inset-0 flex items-center justify-center"
+                    initial={{
+                      y: "100%",
+                      opacity: 0,
+                      filter: "blur(10px)",
+                    }}
+                    animate={{
+                      y: 0,
+                      opacity: 1,
+                      filter: "blur(0px)",
+                    }}
+                    exit={{
+                      y: "100%",
+                      opacity: 0,
+                      filter: "blur(10px)",
+                    }}
+                    transition={{
+                      duration: revealDuration,
+                      delay: i * columnDelay,
+                      ease: [0.76, 0, 0.24, 1],
+                    }}
+                  >
+                    {char}
+                  </motion.span>
+                </span>
+              ))}
+            </motion.h1>
           </div>
 
         </motion.div>

@@ -34,7 +34,7 @@ const Header = () => {
       >
         {/* Logo */}
         <Reveal direction="left">
-          <div
+          <Link to="/"
             className="font-oswald py-6 text-[24px] font-semibold text-brand px-12 
             after:absolute after:w-[65%] lg:after:w-[86%] xl:after:w-[93%] 
             after:h-px after:bg-[#C0C0C0] after:-bottom-px after:left-12 after:z-10"
@@ -42,7 +42,7 @@ const Header = () => {
             <span className="text-heading">R</span>i
             <span className="text-heading">Y</span>a
             <span className="text-heading">D</span>
-          </div>
+          </Link>
         </Reveal>
 
         {/* Right Side */}
