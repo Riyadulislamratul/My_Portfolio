@@ -10,7 +10,7 @@ const Services = () => {
   return (
     <Section className="px-4 lg:px-0">
       <Container>
-        <div>
+        <div className="px-4 xl:px-0">
           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-10 xl:gap-33.5 w-full mb-8 md:mb-12">
             <Reveal direction="left">
               <div>
@@ -50,9 +50,9 @@ const Services = () => {
                   <h4 className="text-brand mt-6 md:mt-8 lg:mt-44 text-sm md:text-base">
                     SAY HELLO!
                   </h4>
-                  <h3 className="text-white mt-2 font-bold font-syne text-xl md:text-[20px] lg:text-[22px]">
+                  <a className="text-white mt-2 font-bold font-syne text-xl md:text-[20px] lg:text-[22px]" href="mailto:riadulislamratul93@gmail.com">
                     riadulislamratul93@gmail.com
-                  </h3>
+                  </a>
                 </div>
               </div>
             </Reveal>

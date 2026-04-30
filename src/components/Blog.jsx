@@ -13,7 +13,8 @@ const Blog = () => {
   return (
     <section className="mt-10 md:mt-20 lg:mt-30">
       <Container>
-        <Reveal direction="up">
+        <div className="px-4 xl:px-0">
+          <Reveal direction="up">
           <div className="lg:text-center pl-6">
             <p className="text-brand font-syne font-bold text-lg md:text-[18px]">
               Blogs
@@ -36,6 +37,7 @@ const Blog = () => {
             </StaggerItem>
           </Stagger>
         </Reveal>
+        </div>
       </Container>
     </section>
   );

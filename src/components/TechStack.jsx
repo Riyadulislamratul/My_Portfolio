@@ -8,56 +8,70 @@ import NextJS from "../assets/icons/nextjs.png";
 import Git from "../assets/icons/git.png";
 import Github from "../assets/icons/gith.png";
 import Figma from "../assets/icons/figma.png";
-import React from "../assets/icons/react.png";
+import ReactIcon from "../assets/icons/react.png";
+import Firebase from "../assets/icons/firebase.png";
+
 import Reveal from "./Reveal";
+
 const TechStack = () => {
+  const techItems = [
+    { icon: HTML, name: "HTML" },
+    { icon: CSS, name: "CSS" },
+    { icon: JS, name: "JavaScript" },
+    { icon: Tailwind, name: "Tailwind CSS" },
+    { icon: ReactIcon, name: "React" },
+    { icon: NextJS, name: "Next.js" },
+    { icon: Git, name: "Git" },
+    { icon: Github, name: "GitHub" },
+    { icon: Figma, name: "Figma" },
+    { icon: Firebase, name: "Firebase" },
+  ];
+
   return (
-    <Section className="py-25">
+    <Section className="py-12 md:py-16 lg:py-24">
       <Container>
+        
+        {/* Heading */}
         <Reveal direction="up">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <p className="text-brand font-syne text-lg md:text-xl pb-2 font-bold">
+          <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
+            <p className="text-brand font-syne text-base sm:text-lg md:text-xl font-bold pb-2">
               Tools
             </p>
-            <h1 className="text-3xl md:text-4xl lg:text-6xl font-syne font-bold text-heading pb-6 md:pb-10">
-              My Tech Stack
+
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-syne font-bold text-heading leading-tight">
+              Tech Stack
             </h1>
           </div>
         </Reveal>
-        <div className="space-y-30 ">
-          <Reveal>
-            <div className="flex justify-center items-center gap-70 ">
-              <div className="size-20">
-                <img src={HTML} alt="" className="w-full" />
+
+        {/* Tech Grid */}
+        <Reveal>
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 place-items-center">
+            {techItems.map((tech, index) => (
+              <div
+                key={index}
+                className="group flex flex-col items-center justify-center"
+              >
+                
+                {/* Icon Card */}
+                <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center rounded-2xl p-2 sm:p-3 hover:scale-110 transition duration-300">
+                  <img
+                    src={tech.icon}
+                    alt={tech.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
+                {/* Label */}
+                <p className="mt-2 text-xs sm:text-sm md:text-base font-medium text-heading opacity-80 group-hover:opacity-100 transition">
+                  {tech.name}
+                </p>
+
               </div>
-              <div className="size-20">
-                <img src={CSS} alt="" className="w-full" />
-              </div>
-              <div className="size-20">
-                <img src={JS} alt="" className="w-full" />
-              </div>
-              <div className="size-20">
-                <img src={Tailwind} alt="" className="" />
-              </div>
-            </div>
-          </Reveal>
-          <Reveal>
-            <div className="flex justify-center items-center gap-70">
-              <div className="size-20">
-                <img src={React} alt="" className="w-full" />
-              </div>
-              <div className="size-20">
-                <img src={NextJS} alt="" />
-              </div>
-              <div className="size-20">
-                <img src={Git} alt="" />
-              </div>
-              <div className="size-20">
-                <img src={Github} alt="" />
-              </div>
-            </div>
-          </Reveal>
-        </div>
+            ))}
+          </div>
+        </Reveal>
+
       </Container>
     </Section>
   );

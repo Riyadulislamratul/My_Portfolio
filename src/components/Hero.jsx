@@ -38,8 +38,12 @@ const Hero = () => {
             </StaggerItem>
             <StaggerItem>
             <div className="mb-32.5 cursor-pointer flex items-center gap-7.5">
-              <BlackButton>Let's Talk</BlackButton>
-              <TransparentButton>My Work</TransparentButton>
+              <Link to="/contact">
+                <BlackButton>Let's Talk</BlackButton>
+              </Link>
+              <Link to="/blog">
+                <TransparentButton>My Work</TransparentButton>
+              </Link>
             </div>
             </StaggerItem>
             <StaggerItem>
@@ -47,11 +51,11 @@ const Hero = () => {
               <div className="flex items-center gap-2 ">
                 <StaggerItem>
                 <h3 className="font-bold text-[44px] font-syne leading-13.5 text-heading lining-nums">
-                  1.2k+
+                  12+
                 </h3>
                 </StaggerItem>
                 <StaggerItem>
-                <p>Worldwide Clients</p>
+                <p>Project Completed</p>
                 </StaggerItem>
               </div>
               <StaggerItem>

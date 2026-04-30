@@ -11,7 +11,7 @@ const Pricing = () => {
   return (
     <Section>
       <Container>
-        <div className="px-4 lg:px-0">
+        <div className="px-4 xl:px-0">
           <div className="flex flex-col lg:flex-row justify-between gap-8 lg:gap-0">
             <Reveal direction="left">
               <div className="max-w-[527px]">
@@ -24,11 +24,11 @@ const Pricing = () => {
               </div>
             </Reveal>
             <Reveal direction="right">
-              <div className="flex items-start lg:items-end">
+              <Link to="/contact" className="flex items-start lg:items-end">
                 <BlackButton className=" lg:w-auto">
                   Contact for Custom Project
                 </BlackButton>
-              </div>
+              </Link>
             </Reveal>
           </div>
           <Reveal direction="up">
@@ -40,7 +40,7 @@ const Pricing = () => {
                     hours="20 Hours"
                     perweek="10 hours per Week"
                     perhour="$28/hr"
-                    link="/basic-plan"
+                    link="/contact"
                   />
                 </StaggerItem>
                 <StaggerItem>
@@ -49,7 +49,7 @@ const Pricing = () => {
                     hours="40 Hours"
                     perweek="15 hours per Week"
                     perhour="$42/hr"
-                    link="/standard-plan"
+                    link="/contact"
                   />
                 </StaggerItem>
                 <StaggerItem>
@@ -58,7 +58,7 @@ const Pricing = () => {
                     hours="60 Hours"
                     perweek="20 hours per Week"
                     perhour="$50/hr"
-                    link="/premium-plan"
+                    link="/contact"
                   />
                 </StaggerItem>
               </div>

@@ -11,7 +11,7 @@ const RecentWorks = () => {
   return (
     <section className="bg-orange">
       <Container>
-        <div className="py-12 md:py-16 lg:py-20">
+        <div className="py-12 md:py-16 lg:py-20 px-4 xl:px-0">
           <Reveal direction="down">
             <div className="text-center max-w-2xl mx-auto">
             <p className="text-brand font-syne text-lg md:text-xl pb-2 font-bold">

@@ -15,7 +15,7 @@ const Details = () => {
   return (
     <Section className="bg-[#F5F5F5]">
       <Container>
-        <div className="py-16 px-4 lg:px-0 md:py-20 lg:py-25 grid grid-cols-1 lg:grid-cols-[455px_1fr] gap-8 lg:gap-10 xl:gap-36.5">
+        <div className="py-16 px-4 xl:px-5 md:py-20 lg:py-25 grid grid-cols-1 lg:grid-cols-[455px_1fr] gap-8 lg:gap-10 xl:gap-36.5">
           <Reveal direction="left">
             <div>
             <p className="text-brand font-syne text-lg md:text-[20px] font-bold pb-2.5">
