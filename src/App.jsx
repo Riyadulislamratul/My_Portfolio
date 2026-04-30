@@ -35,28 +35,29 @@ const App = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1800);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!isLoading) {
+    const handleLoad = () => {
       setTimeout(() => {
-        window.dispatchEvent(new Event("resize"));
-      }, 50);
+        setIsLoading(false);
+      }, 2000); // keep loader stable duration
+    };
+
+    if (document.readyState === "complete") {
+      handleLoad();
+    } else {
+      window.addEventListener("load", handleLoad);
     }
-  }, [isLoading]);
+
+    return () => window.removeEventListener("load", handleLoad);
+  }, []);
 
   return (
     <>
-      {isLoading ? (
-        <Loader isLoading={isLoading} />
-      ) : (
+      <Loader isLoading={isLoading} />
+      
+      {/* IMPORTANT: keep app mounted always */}
+      <div className={isLoading ? "opacity-0" : "opacity-100 transition-opacity duration-500"}>
         <RouterProvider router={router} />
-      )}
+      </div>
     </>
   );
 };
