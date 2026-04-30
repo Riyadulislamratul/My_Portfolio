@@ -30,8 +30,6 @@ const TechStack = () => {
   return (
     <Section className="py-12 md:py-16 lg:py-24">
       <Container>
-        
-        {/* Heading */}
         <Reveal direction="up">
           <div className="text-center max-w-2xl mx-auto mb-10 md:mb-14">
             <p className="text-brand font-syne text-base sm:text-lg md:text-xl font-bold pb-2">
@@ -44,7 +42,6 @@ const TechStack = () => {
           </div>
         </Reveal>
 
-        {/* Tech Grid */}
         <Reveal>
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-6 sm:gap-8 md:gap-10 lg:gap-12 place-items-center">
             {techItems.map((tech, index) => (
@@ -52,8 +49,6 @@ const TechStack = () => {
                 key={index}
                 className="group flex flex-col items-center justify-center"
               >
-                
-                {/* Icon Card */}
                 <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 flex items-center justify-center rounded-2xl p-2 sm:p-3 hover:scale-110 transition duration-300">
                   <img
                     src={tech.icon}
@@ -62,16 +57,13 @@ const TechStack = () => {
                   />
                 </div>
 
-                {/* Label */}
                 <p className="mt-2 text-xs sm:text-sm md:text-base font-medium text-heading opacity-80 group-hover:opacity-100 transition">
                   {tech.name}
                 </p>
-
               </div>
             ))}
           </div>
         </Reveal>
-
       </Container>
     </Section>
   );
