@@ -1,23 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Oswald:wght@200..700&family=Syne:wght@400..800&display=swap');
 @import "tailwindcss";
 
+html {
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
+  width: 100%;
   overflow-x: hidden;
   cursor: none;
 }
 
-@utility container {
-	margin-inline: auto;
+img,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
 }
 
+@utility container {
+  margin-inline: auto;
+}
 
-
-@theme{
+@theme {
   /* Font Family */
   --font-dm-sans: 'DM Sans', sans-serif;
   --font-syne: 'Syne', sans-serif;
   --font-oswald: 'Oswald', sans-serif;
-/* Colors */
+
+  /* Colors */
   --color-heading: #080808;
   --color-body: #080808/.80;
   --color-subdued: #080808/.60;
@@ -27,8 +40,6 @@ body {
   --color-white: #fff;
   --color-black: #000;
   --color-orange: #FFE9D9;
-
-  
 
   /* Breakpoint */
   --breakpoint-*: initial;
@@ -43,6 +54,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

@@ -57,7 +57,7 @@ const ProjectCard = ({ project }) => {
   return (
     <div className="w-full  ">
       {/* Image */}
-      <div className="w-full rounded-2xl overflow-hidden mb-4 md:mb-6 group h-[380px]">
+      <div className="w-full rounded-2xl overflow-hidden mb-4 md:mb-6 group">
         <img
           src={project.image}
           alt={project.title}

@@ -37,15 +37,26 @@ const App = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 1800); // slightly faster = better UX
+    }, 1800);
 
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    if (!isLoading) {
+      setTimeout(() => {
+        window.dispatchEvent(new Event("resize"));
+      }, 50);
+    }
+  }, [isLoading]);
+
   return (
     <>
-      <RouterProvider router={router} />
-      <Loader isLoading={isLoading} />
+      {isLoading ? (
+        <Loader isLoading={isLoading} />
+      ) : (
+        <RouterProvider router={router} />
+      )}
     </>
   );
 };
