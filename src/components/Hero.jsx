@@ -78,7 +78,9 @@ const Hero = () => {
             </StaggerItem>
           </div>
           <div className="xl:w-[662px] xl:h-[985px] rounded-[220px] bg-brand rotate-45 absolute xl:-right-104 xl:-top-94 overflow-hidden hidden lg:block lg:w-[500px] lg:h-[900px] lg:-right-52 lg:-top-60">
-            <img src={MyImg} alt="Hero" className=" w-full h-full object-cover rotate-316 xl:pt-48 xl:pr-49 lg:pt-52 lg:pr-40" />
+            <div className="w-full h-full xl">
+              <img src={MyImg} alt="Hero" className=" w-full h-full object-cover rotate-316 xl:pt-48 xl:pr-49 lg:pt-52 lg:pr-40" />
+            </div>
           </div>
           <div className="size-45 p-5.25 absolute -right-46 top-118">
             <Link

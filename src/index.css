@@ -13,12 +13,12 @@ body {
   cursor: none;
 }
 
-img,
+/* img,
 video,
 canvas {
   max-width: 100%;
   height: auto;
-}
+} */
 
 @utility container {
   margin-inline: auto;
