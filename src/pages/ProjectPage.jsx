@@ -7,6 +7,8 @@ import { Link } from "react-router";
 import { ArrowUpRightIcon, ArrowUp } from "lucide-react";
 import PI_1 from "../assets/project-1.png";
 import PI_2 from "../assets/project-2.png";
+import PI_3 from "../assets/travel.png";
+import PI_4 from "../assets/cheffest.png";
 
 const ProjectPage = () => {
   return (
@@ -22,19 +24,23 @@ const ProjectPage = () => {
             </h3>
           </div>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr] gap-10 px-4 lg:px-0 md:gap-8">
-          <WorkCard
-            img={PI_1}
-            title="Project 1"
-          />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr] gap-10 px-4 lg:px-0 md:gap-8 mb-6">
+          <Link to='https://modevo-project-with-react.vercel.app/'>
           <WorkCard
             img={PI_2}
-            title="Project 2"
+            title="Fashion Website"
           />
+          </Link>
+          <Link to='https://travel-agency-eta-three.vercel.app/'>
+          <WorkCard
+            img={PI_3}
+            title="Travel Agency Website"
+          />
+          </Link>
         </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr] gap-10 px-4 lg:px-0 md:gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr] gap-10 px-4 lg:px-0 md:gap-8 mb-6">
             <WorkCard
-            img={PI_1}
+            img={PI_3}
             title="Project 1"
           />
           <WorkCard
@@ -45,16 +51,18 @@ const ProjectPage = () => {
             img={PI_2}
             title="Project 2"
           />
-          </div>
+          </div> */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-10 px-4 lg:px-0 md:gap-8">
+          <Link to='https://riyadulislamratul.github.io/Resturant-Website/'>
+          <WorkCard
+            img={PI_4}
+            title="Restaurant Website"
+          /></Link>
+          <Link to='https://e-commerce-five-navy-79.vercel.app/'>
           <WorkCard
             img={PI_1}
-            title="Project 1"
-          />
-          <WorkCard
-            img={PI_2}
-            title="Project 2"
-          />
+            title="E-commerce Website"
+          /></Link>
         </div>
       </Container>
     </Section>
@@ -65,7 +73,7 @@ export default ProjectPage;
 
 const WorkCard = ({ img, title }) => {
   return (
-    <div className="group relative w-full h-[260px] md:h-[320px] lg:h-[380px] rounded-lg overflow-hidden cursor-pointer">
+    <div className="group relative w-full h-[260px] md:h-[320px] lg:h-full rounded-lg overflow-hidden cursor-pointer">
       
       {/* Image */}
       <img
