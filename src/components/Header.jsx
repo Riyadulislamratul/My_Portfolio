@@ -119,7 +119,7 @@ const Header = () => {
                     initial={{ opacity: 0, x: 40 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex justify-between items-center text-white text-xl border-b border-white/20 pb-4 cursor-pointer group"
+                    className="flex justify-between items-center text-white text-xl border-b border-white/20 pb-4 cursor-pointer group  hover:text-brand2 transition-all duration-300"
                   >
                     <span>{item.name}</span>
                     <ArrowUpRightIcon className="opacity-70 group-hover:translate-x-1 group-hover:-translate-y-1 transition" />

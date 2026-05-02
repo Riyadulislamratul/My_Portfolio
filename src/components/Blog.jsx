@@ -81,30 +81,43 @@ const cards = [
 
 const BlogCard = ({ img, title, date, description, link }) => {
   return (
-    <Link to={link} className="w-full lg:w-[306px]">
-      <div className="w-full md:w-[300px] lg:w-auto h-auto md:h-[380px] lg:h-95 mb-4 md:mb-6">
+    <Link
+      to={link}
+      className="group w-full lg:w-[306px] block"
+    >
+      {/* Image Wrapper */}
+      <div className="w-full md:w-[300px] lg:w-auto h-auto md:h-[380px] lg:h-95 mb-4 md:mb-6 overflow-hidden rounded-lg">
         <img
           src={img}
           alt={title}
-          className="w-full h-full object-cover rounded-lg"
+          className="w-full h-full object-cover rounded-lg transition-all duration-700 ease-out group-hover:scale-110"
         />
       </div>
+
+      {/* Meta Info */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-3">
-        <h3 className="text-heading/80 text-sm flex items-center whitespace-nowrap font-bold font-syne">
-          <Dot className="size-3 mr-1" />
+        <h3 className="text-heading/80 text-sm flex items-center whitespace-nowrap font-bold font-syne transition-colors duration-300 group-hover:text-brand">
+          <Dot className="size-3 mr-1 transition-transform duration-300 group-hover:scale-125" />
           {title}
         </h3>
-        <p className="text-brand text-sm flex items-center whitespace-nowrap">
-          <Dot className="size-3 mr-1" />
+
+        <p className="text-brand text-sm flex items-center whitespace-nowrap transition-all duration-300 group-hover:translate-x-1">
+          <Dot className="size-3 mr-1 transition-transform duration-300 group-hover:scale-125" />
           {date}
         </p>
       </div>
+
+      {/* Description + Arrow */}
       <div className="flex items-start sm:items-end justify-between gap-2">
-        <h3 className="font-dm-sans text-xl md:text-2xl leading-7 md:leading-8">
+        <h3 className="font-dm-sans text-xl md:text-2xl leading-7 md:leading-8 transition-all duration-300 group-hover:text-brand">
           {description}
         </h3>
-        <ArrowUpRightIcon className="size-5 md:size-8 flex-shrink-0" />
+
+        <ArrowUpRightIcon className="size-5 md:size-8 flex-shrink-0 transition-all duration-500 group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:rotate-45 text-heading group-hover:text-brand" />
       </div>
+
+      {/* Bottom Line Animation */}
+      <div className="mt-4 h-[1px] w-0 bg-brand transition-all duration-500 group-hover:w-full" />
     </Link>
   );
 };

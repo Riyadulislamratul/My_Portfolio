@@ -28,7 +28,7 @@ const Vision = () => {
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-6 md:gap-8 lining-nums">
               
               <StaggerItem>
                 <div>

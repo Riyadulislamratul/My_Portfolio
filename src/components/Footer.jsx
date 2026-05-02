@@ -91,7 +91,7 @@ const Footer = () => {
 
               <button
                 onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                className="text-white flex items-center gap-2 hover:text-brand transition"
+                className="text-white flex items-center gap-2 cursor-pointer hover:text-brand transition"
               >
                 Back to top
                 <ArrowUp className="text-brand" />

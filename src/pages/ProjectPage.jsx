@@ -24,21 +24,23 @@ const ProjectPage = () => {
             </h3>
           </div>
         </Reveal>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr] gap-10 px-4 lg:px-0 md:gap-8 mb-6">
-          <Link to='https://modevo-project-with-react.vercel.app/'>
-          <WorkCard
-            img={PI_2}
-            title="Fashion Website"
-          />
-          </Link>
-          <Link to='https://travel-agency-eta-three.vercel.app/'>
-          <WorkCard
-            img={PI_3}
-            title="Travel Agency Website"
-          />
-          </Link>
-        </div>
-          {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr] gap-10 px-4 lg:px-0 md:gap-8 mb-6">
+        <Reveal direction="up">
+          <Stagger>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr] gap-10 px-4 lg:px-0 md:gap-8 mb-10">
+              <StaggerItem>
+                <Link to="https://modevo-project-with-react.vercel.app/">
+                  <WorkCard img={PI_2} title="Fashion Website" />
+                </Link>
+              </StaggerItem>
+              <StaggerItem>
+                <Link to="https://travel-agency-eta-three.vercel.app/">
+                  <WorkCard img={PI_3} title="Travel Agency Website" />
+                </Link>
+              </StaggerItem>
+            </div>
+          </Stagger>
+        </Reveal>
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr] gap-10 px-4 lg:px-0 md:gap-8 mb-6">
             <WorkCard
             img={PI_3}
             title="Project 1"
@@ -52,18 +54,22 @@ const ProjectPage = () => {
             title="Project 2"
           />
           </div> */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-10 px-4 lg:px-0 md:gap-8">
-          <Link to='https://riyadulislamratul.github.io/Resturant-Website/'>
-          <WorkCard
-            img={PI_4}
-            title="Restaurant Website"
-          /></Link>
-          <Link to='https://e-commerce-five-navy-79.vercel.app/'>
-          <WorkCard
-            img={PI_1}
-            title="E-commerce Website"
-          /></Link>
-        </div>
+        <Reveal direction="up">
+          <Stagger>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-10 px-4 lg:px-0 md:gap-8">
+              <StaggerItem>
+                <Link to="https://riyadulislamratul.github.io/Resturant-Website/">
+                  <WorkCard img={PI_4} title="Restaurant Website" />
+                </Link>
+              </StaggerItem>
+              <StaggerItem>
+                <Link to="https://e-commerce-five-navy-79.vercel.app/">
+                  <WorkCard img={PI_1} title="E-commerce Website" />
+                </Link>
+              </StaggerItem>
+            </div>
+          </Stagger>
+        </Reveal>
       </Container>
     </Section>
   );
@@ -74,7 +80,6 @@ export default ProjectPage;
 const WorkCard = ({ img, title }) => {
   return (
     <div className="group relative w-full h-[260px] md:h-[320px] lg:h-full rounded-lg overflow-hidden cursor-pointer">
-      
       {/* Image */}
       <img
         src={img}
@@ -84,12 +89,9 @@ const WorkCard = ({ img, title }) => {
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-between p-5">
-        <p className="text-[17px] font-bold font-syne text-white">
-          {title}
-        </p>
+        <p className="text-[17px] font-bold font-syne text-white">{title}</p>
         <ArrowUpRightIcon className="text-white w-8 h-8" />
       </div>
-      
     </div>
   );
 };

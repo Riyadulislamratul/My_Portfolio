@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Section from "../components/Section";
 import Container from "../components/Container";
 import Reveal from "../components/Reveal";
@@ -14,6 +14,29 @@ import Github from "../assets/github.svg";
 import { Link } from "react-router";
 
 const ContactPage = () => {
+  const [result, setResult] = useState("");
+  const onSubmit = async (event) => {
+  event.preventDefault();
+  setResult("Sending...");
+
+  const formData = new FormData(event.target);
+
+  formData.append("access_key", "34402e0c-4682-4740-92cd-dc11e571d89d");
+
+  const response = await fetch("https://api.web3forms.com/submit", {
+    method: "POST",
+    body: formData,
+  });
+
+  const data = await response.json();
+
+  if (data.success) {
+    setResult("Message sent successfully!");
+    event.target.reset();
+  } else {
+    setResult("Something went wrong!");
+  }
+};
   return (
     <Section>
       <Container>
@@ -68,41 +91,55 @@ const ContactPage = () => {
           <Reveal>
             <Stagger>
               <div className="p-4 md:p-6 rounded-lg w-full">
-                <form className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
-                  <StaggerItem>
-                    <Input label="Name" placeholder="Your name*" />
+                <form onSubmit={onSubmit} >
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 z-10" >
+                    <StaggerItem>
+                    <Input 
+                    name="name"
+                    label="Name" 
+                    placeholder="Your name*" />
                   </StaggerItem>
                   <StaggerItem>
                     <Input
+                      name="email"
                       label="Email"
                       type="email"
                       placeholder="Your email*"
                     />
                   </StaggerItem>
                   <StaggerItem>
-                    <Input label="Phone" placeholder="Your number" />
+                    <Input 
+                    name="phone" 
+                    label="Phone" 
+                    placeholder="Your number" />
                   </StaggerItem>
                   <StaggerItem>
-                    <Input label="Subject*" placeholder="Your subject*" />
+                    <Input 
+                    name="subject" 
+                    label="Subject*" 
+                    placeholder="Your subject*" />
                   </StaggerItem>
 
                   <StaggerItem>
                     <div className="md:col-span-2 flex flex-col gap-2">
                       <label className="text-sm text-heading">Message</label>
                       <textarea
+                        name="message"
                         rows="4"
                         placeholder="Type your message"
                         className="w-full border text-heading/40 rounded-md px-4 py-3 bg-transparent focus:outline-none focus:ring-1 focus:ring-black resize-none lg:w-135"
                       ></textarea>
                     </div>
                   </StaggerItem>
-                </form>
-
+                  </div>
                 <StaggerItem>
-                  <BlackButton className="mt-5 w-full md:w-auto">
+                  <BlackButton type="submit" className="mt-5 w-full md:w-auto">
                     Submit
                   </BlackButton>
                 </StaggerItem>
+                <p className="mt-4 text-sm text-heading">{result}</p>
+                </form>
+
 
                 {/* Social */}
                 <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-10 md:mt-14">
@@ -166,11 +203,12 @@ const ContactPage = () => {
 
 export default ContactPage;
 
-const Input = ({ label, type = "text", placeholder }) => {
+const Input = ({ label, type = "text", placeholder, name }) => {
   return (
     <div className="flex flex-col gap-2">
       <label className="text-sm text-heading">{label}</label>
       <input
+        name={name}
         type={type}
         placeholder={placeholder}
         className="w-full border text-heading/40 rounded-md px-4 py-3 bg-transparent focus:outline-none focus:ring-1 focus:ring-black"

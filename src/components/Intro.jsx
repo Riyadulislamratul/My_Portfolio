@@ -62,10 +62,10 @@ const Intro = () => {
                   <StaggerItem>
                     <div>
                       <h3 className="text-xl md:text-2xl lg:text-[32px] text-black font-syne font-bold">
-                        100%
+                        10+
                       </h3>
                       <p className="text-sm md:text-base lg:text-[16px] font-dm-sans text-heading/60">
-                        Client Satisfaction
+                        Technologies Mastered
                       </p>
                     </div>
                   </StaggerItem>
