@@ -35,7 +35,7 @@ const Header = () => {
         {/* Logo */}
         <Reveal direction="left">
           <Link to="/"
-            className="font-oswald py-6 text-[24px] font-semibold text-brand px-12 
+            className="font-oswald py-6 text-[24px] font-semibold items-center text-brand px-12 
             after:absolute after:w-[65%] lg:after:w-[86%] xl:after:w-[93%] 
             after:h-px after:bg-[#C0C0C0] after:-bottom-px after:left-12 after:z-10"
           >
@@ -50,7 +50,7 @@ const Header = () => {
           <div className="h-full">
             <div className="flex items-center gap-5 h-full">
               {/* Let's Talk */}
-              <div className="flex items-center gap-1 cursor-pointer">
+              <div className="flex items-center gap-1 cursor-pointer z-100">
                 <p
                   className={`font-bold font-dm-sans text-[15px] ${
                     isHome ? "text-heading" : "text-black"

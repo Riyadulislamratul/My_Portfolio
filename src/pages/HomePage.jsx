@@ -20,7 +20,7 @@ const HomePage = () => {
     {/* <Feedback /> */}
     <Blog />
     <TechStack />
-    <Pricing />
+    {/* <Pricing /> */}
     </>
   )
 }
