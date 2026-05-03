@@ -35,7 +35,7 @@ const Header = () => {
         {/* Logo */}
         <Reveal direction="left">
           <Link to="/"
-            className="font-oswald py-6 text-[24px] font-semibold items-center text-brand px-12 
+            className="font-oswald py-6 text-[24px] font-semibold flex items-center text-brand px-12 
             after:absolute after:w-[65%] lg:after:w-[86%] xl:after:w-[93%] 
             after:h-px after:bg-[#C0C0C0] after:-bottom-px after:left-12 after:z-10"
           >
