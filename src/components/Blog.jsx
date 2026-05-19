@@ -5,6 +5,8 @@ import BlogImg1 from "../assets/blog-1.png";
 import BlogImg2 from "../assets/cheffest.png";
 import BlogImg3 from "../assets/travel.png";
 import BlogImg4 from "../assets/project-1.png";
+import BlogImg5 from "../assets/foodi1.png";
+import BlogImg6 from "../assets/pixfix.png";
 import { Link } from "react-router";
 import Reveal from "./Reveal";
 import { Stagger, StaggerItem } from "./Stagger";
@@ -27,7 +29,7 @@ const Blog = () => {
         <Reveal direction="up">
           <Stagger>
             <StaggerItem>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-4 lg:px-0 md:gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 px-4 lg:px-0 md:gap-8 space-y-10 ">
             {cards.map((card, i) => (
               <div key={i} className={i % 2 === 1 ? "lg:translate-y-10" : ""}>
                 <BlogCard {...card} />
@@ -76,6 +78,22 @@ const cards = [
     description:
       "Beautiful landing page with engaging UI for travel experiences.",
     link: "https://travel-agency-eta-three.vercel.app/",
+  },
+  {
+    img: BlogImg5,
+    title: "Foodi Restaurant",
+    date: "May 02, 2026",
+    description:
+      "Animated landing page with engaging UI for rastaurant experiences.",
+    link: "https://foodi-resturant.vercel.app/",
+  },
+  {
+    img: BlogImg6,
+    title: "Pixfix Website",
+    date: "May 09, 2026",
+    description:
+      "Functionable Car repair website with clean UI and responsive design.",
+    link: "https://pix-fix.vercel.app/",
   },
 ];
 

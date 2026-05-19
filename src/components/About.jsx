@@ -3,6 +3,7 @@ import Section from "./Section";
 import Container from "./Container";
 
 import Heroo from "../assets/about.png";
+import Reveal from "./Reveal";
 
 const About = () => {
   return (
@@ -13,16 +14,19 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-center">
           
           {/* LEFT IMAGE */}
-          <div className="w-full px-3">
+          <Reveal direction="left">
+            <div className="w-full px-3">
             <img
               src={Heroo}
               alt="Md Riyadul Islam Ratul"
               className="w-full h-auto object-cover rounded-2xl"
             />
           </div>
+          </Reveal>
 
           {/* RIGHT CONTENT */}
-          <div className="px-3">
+          <Reveal direction="right">
+            <div className="px-3">
             
             {/* Small Label */}
             <p className="text-brand2 mb-2 text-base sm:text-lg md:text-xl font-bold font-syne">
@@ -62,6 +66,7 @@ const About = () => {
             </h3>
 
           </div>
+          </Reveal>
 
         </div>
       </Container>

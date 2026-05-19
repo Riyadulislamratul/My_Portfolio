@@ -142,14 +142,14 @@ const About = () => {
               3+ years
             </span>
           </div>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-10">
+          {/* <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-10">
             <span className="text-heading/80 font-dm-sans w-full sm:w-27.5 text-sm md:text-[18px]">
               Freelance
             </span>
             <span className="text-heading font-bold font-syne text-lg md:text-[24px]">
               Available
             </span>
-          </div>
+          </div> */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-10">
             <span className="text-heading/80 font-dm-sans w-full sm:w-27.5 text-sm md:text-[18px]">
               Linkedln

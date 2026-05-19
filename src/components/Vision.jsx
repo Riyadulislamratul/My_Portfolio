@@ -3,6 +3,7 @@ import Section from "./Section";
 import Container from "./Container";
 import { StaggerItem } from "./Stagger";
 import { ArrowUpRightIcon } from "lucide-react";
+import Reveal from "./Reveal";
 
 const Vision = () => {
   return (
@@ -10,10 +11,12 @@ const Vision = () => {
       <Container>
         
         {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center px-3">
+        <Reveal direction="up">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center px-3">
           
           {/* LEFT SIDE */}
-          <div>
+          <Reveal direction="left">
+            <div>
             {/* Heading */}
             <h2 className="text-heading font-syne font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[64px] leading-tight tracking-tight mb-4 md:mb-6">
               My vision is to create happy my clients
@@ -65,17 +68,17 @@ const Vision = () => {
 
             </div>
           </div>
+          </Reveal>
 
           {/* RIGHT SIDE */}
-          <div className="flex flex-col justify-center">
+          <Reveal direction="right">
+            <div className="flex flex-col justify-center">
             
             {/* Big Number */}
-            <div className="">
+            <div>
               <h3 className="font-syne font-bold text-5xl lining-nums  sm:text-6xl md:text-7xl lg:text-[80px] leading-none">
-                12+
+                3+
               </h3>
-            </div>
-
             {/* Outline Text */}
             <h1
               className="font-syne font-bold text-3xl sm:text-4xl md:text-5xl lg:text-[64px] tracking-tight leading-tight text-transparent mt-2"
@@ -87,19 +90,21 @@ const Vision = () => {
               <br />
               experience
             </h1>
+            </div>
+
 
             {/* Contact Box */}
             <div className="mt-8 md:mt-10 lg:mt-12">
               <div className="p-5 sm:p-6 bg-black rounded-2xl">
                 
-                <p className="text-brand2 font-syne text-sm sm:text-base lg:text-lg mb-2">
+                <p className="text-brand2 font-syne text-sm sm:text-base lg:text-lg mb-5 lg:mb-2">
                   SAY HELLO!
                 </p>
 
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex sm:items-center justify-between gap-4">
                   <a
                     href="mailto:riadulislamratul93@gmail.com"
-                    className="text-sm sm:text-base md:text-lg font-bold font-syne text-white break-all"
+                    className="text-sm sm:text-[14px] md:text-lg font-bold font-syne text-white break-all lining-nums"
                   >
                     riadulislamratul93@gmail.com
                   </a>
@@ -111,8 +116,10 @@ const Vision = () => {
             </div>
 
           </div>
+          </Reveal>
 
         </div>
+        </Reveal>
       </Container>
     </Section>
   );

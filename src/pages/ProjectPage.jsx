@@ -9,6 +9,8 @@ import PI_1 from "../assets/project-1.png";
 import PI_2 from "../assets/project-2.png";
 import PI_3 from "../assets/travel.png";
 import PI_4 from "../assets/cheffest.png";
+import PI_5 from "../assets/foodi.png";
+import PI_6 from "../assets/pixfix.png";
 
 const ProjectPage = () => {
   return (
@@ -33,8 +35,8 @@ const ProjectPage = () => {
                 </Link>
               </StaggerItem>
               <StaggerItem>
-                <Link to="https://travel-agency-eta-three.vercel.app/">
-                  <WorkCard img={PI_3} title="Travel Agency Website" />
+                <Link to="https://foodi-resturant.vercel.app/">
+                  <WorkCard img={PI_5} title="Foodi Restaurant" />
                 </Link>
               </StaggerItem>
             </div>
@@ -58,13 +60,30 @@ const ProjectPage = () => {
           <Stagger>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr] gap-10 px-4 lg:px-0 md:gap-8">
               <StaggerItem>
-                <Link to="https://riyadulislamratul.github.io/Resturant-Website/">
-                  <WorkCard img={PI_4} title="Restaurant Website" />
+                
+                <Link to="https://travel-agency-eta-three.vercel.app/">
+                  <WorkCard img={PI_3} title="Travel Agency Website" />
                 </Link>
               </StaggerItem>
               <StaggerItem>
                 <Link to="https://e-commerce-five-navy-79.vercel.app/">
                   <WorkCard img={PI_1} title="E-commerce Website" />
+                </Link>
+              </StaggerItem>
+            </div>
+          </Stagger>
+        </Reveal>
+         <Reveal direction="up">
+          <Stagger>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1fr_2fr] gap-10 px-4 lg:px-0 md:gap-8 mb-10 my-10">
+              <StaggerItem>
+                <Link to="https://pix-fix.vercel.app/">
+                  <WorkCard img={PI_6} title="PixFix Website" />
+                </Link>
+              </StaggerItem>
+              <StaggerItem>
+                <Link to="https://riyadulislamratul.github.io/Resturant-Website/">
+                  <WorkCard img={PI_4} title="Restaurant Website" />
                 </Link>
               </StaggerItem>
             </div>
