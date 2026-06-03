@@ -2,8 +2,10 @@ import React from "react";
 import Section from "./Section";
 import Container from "./Container";
 import { Link } from "react-router";
-import PI_1 from "../assets/project-1.png";
-import PI_2 from "../assets/project-2.png";
+// import PI_1 from "../assets/project-1.png";
+// import PI_2 from "../assets/project-2.png";
+import PI_1 from "../assets/fit_maker.png";
+import PI_2 from "../assets/foodi.png";
 import { ArrowUpRightIcon } from "lucide-react";
 import Reveal from "./Reveal";
 
@@ -28,9 +30,9 @@ const RecentWorks = () => {
               <ProjectCard
               project={{
                 image: PI_1,
-                title: "Full Ecommerce Website",
+                title: "Fit Maker Gym Website",
                 description: "Description of project 1",
-                link: "https://e-commerce-five-navy-79.vercel.app/",
+                link: "https://fit-maker-gym.vercel.app/",
               }}
             />
             </Reveal>
@@ -38,9 +40,9 @@ const RecentWorks = () => {
               <ProjectCard
                 project={{
                   image: PI_2,
-                  title: "Modevo Fashion Website",
+                  title: "Foodi Restaurant Website",
                   description: "Description of project 2",
-                  link: "https://modevo-project-with-react.vercel.app/",
+                  link: "https://foodi-resturant.vercel.app/",
                 }}
               />
             </Reveal>

@@ -42,14 +42,14 @@ const Footer = () => {
                       <img src={Dribbble} className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://www.linkedin.com/"
+                      href="https://www.linkedin.com/in/md-riyadul-islam-ratul-16b422326/"
                       target="_blank"
                       rel="noreferrer"
                     >
                       <img src={LinkedIn} className="w-5 h-5" />
                     </a>
                     <a
-                      href="https://github.com/"
+                      href="https://github.com/Riyadulislamratul"
                       target="_blank"
                       rel="noreferrer"
                     >

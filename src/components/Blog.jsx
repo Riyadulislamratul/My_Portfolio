@@ -7,6 +7,8 @@ import BlogImg3 from "../assets/travel.png";
 import BlogImg4 from "../assets/project-1.png";
 import BlogImg5 from "../assets/foodi1.png";
 import BlogImg6 from "../assets/pixfix.png";
+import BlogImg7 from "../assets/blossomia.png";
+import BlogImg8 from "../assets/fitmaker.png";
 import { Link } from "react-router";
 import Reveal from "./Reveal";
 import { Stagger, StaggerItem } from "./Stagger";
@@ -94,6 +96,22 @@ const cards = [
     description:
       "Functionable Car repair website with clean UI and responsive design.",
     link: "https://pix-fix.vercel.app/",
+  },
+  {
+    img: BlogImg7,
+    title: "Blossomia Flower Website",
+    date: "May 21, 2026",
+    description:
+      "Flower website with clean UI and responsive design.",
+    link: "https://blossomia-flower-website.vercel.app/",
+  },
+  {
+    img: BlogImg8,
+    title: "Fit Maker Gym",
+    date: "May 24, 2026",
+    description:
+      "Modern gym website with clean UI and responsive design.",
+    link: "https://fit-maker-gym.vercel.app/",
   },
 ];
 
