@@ -66,13 +66,7 @@ const ContactPage = () => {
                     />
                   </StaggerItem>
 
-                  <StaggerItem>
-                    <Cards
-                      img={CallIcon}
-                      title="Call Us"
-                      description="+8801891-746139 | +8801575-814664"
-                    />
-                  </StaggerItem>
+                 
 
                   <StaggerItem>
                     <Cards

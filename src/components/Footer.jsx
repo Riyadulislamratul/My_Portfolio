@@ -66,9 +66,8 @@ const Footer = () => {
                 type="email"
               />
               <BlackCard
-                title="Want a more in-depth look at my history?"
-                contact="+8801891746139"
-                type="phone"
+                title="Available for freelance projects?"
+                contact="Open to work"
               />
             </div>
           </Reveal>
