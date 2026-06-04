@@ -123,7 +123,7 @@ const About = () => {
               Email
             </span>
             <span className="text-heading font-bold font-syne text-lg md:text-[24px] break-all">
-              riadulislamratul93@gmail.com
+              riyadul.dev@gmail.com
             </span>
           </div>
           {/* <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-10">

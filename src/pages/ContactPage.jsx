@@ -62,7 +62,7 @@ const ContactPage = () => {
                     <Cards
                       img={MailIcon}
                       title="Email"
-                      description="riadulislamratul93@gmail.com"
+                      description="riyadul.dev@gmail.com"
                     />
                   </StaggerItem>
 
@@ -72,7 +72,7 @@ const ContactPage = () => {
                     <Cards
                       img={MapIcon}
                       title="Address"
-                      description="Board Bazar, Gazipur, Bangladesh"
+                      description="Bangladesh"
                     />
                   </StaggerItem>
                 </div>

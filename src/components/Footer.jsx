@@ -62,7 +62,7 @@ const Footer = () => {
               {/* Cards */}
               <BlackCard
                 title="Looking for a developer?"
-                contact="riadulislamratul93@gmail.com"
+                contact="riyadul.dev@gmail.com"
                 type="email"
               />
               <BlackCard
