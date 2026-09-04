@@ -5,6 +5,7 @@ import { BlackButton } from "./Hero";
 import Hello from "../assets/hello.png";
 import Reveal from "./Reveal";
 import { Stagger, StaggerItem } from "./Stagger";
+import { Link } from "react-router";
 
 const Intro = () => {
   return (
@@ -81,11 +82,11 @@ const Intro = () => {
                   </StaggerItem>
                 </div>
                 <StaggerItem>
-                  <a href="/MD Riyadul Islam Ratul.pdf" target="_blank" download>
+                  <Link to="/contact" >
                     <BlackButton className="mt-8 md:mt-10 md:w-auto">
-                      Download my resume
+                      Contact Me
                     </BlackButton>
-                  </a>
+                  </Link>
                 </StaggerItem>
               </div>
             </Stagger>
